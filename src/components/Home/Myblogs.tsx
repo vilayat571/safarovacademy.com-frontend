@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { getAllBlogs } from "../../redux/reducers/fetchAllblogs";
+import { fetchData } from "../../redux/reducers/fetchBlogs";
+
 
 function Myblogs() {
   const dispatch = useAppDispatch();
-  const allBlogs = useAppSelector((state) => state.fetchAllblogs.allBlogs);
+  const allBlogs = useAppSelector((state) => state.fetchAllblogs.blogs);
 
-  console.log(allBlogs);
 
   useEffect(() => {
-    dispatch(getAllBlogs());
+    dispatch(fetchData());
   }, []);
 
   return (

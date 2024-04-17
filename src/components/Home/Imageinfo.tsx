@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import myImg from "../../assets/images/profile.jpeg";
 import Arrrow from "../../atoms/Navbar/Arrrow";
-import Sendlink from "../../atoms/Navbar/Sendlink";
 
 function Imageinfo() {
   return (

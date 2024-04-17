@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -12,9 +12,7 @@ export interface FormSignup {
   password: string;
 }
 
-interface StopRender {
-  (e: React.FormEvent<HTMLFormElement>): void;
-}
+
 
 interface HandleChangeSignup {
   (e: React.ChangeEvent<HTMLInputElement>): void;

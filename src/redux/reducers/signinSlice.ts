@@ -1,4 +1,4 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {  createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Form } from "../../pages/Signin/Signin";
 
 export interface InitialState {
@@ -47,7 +47,7 @@ const signinSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(
       submitSigninForm.pending,
-      (state: InitialState, action: PayloadAction) => {
+      (state: InitialState) => {
         state.loading = false;
         state.error = null;
       }
