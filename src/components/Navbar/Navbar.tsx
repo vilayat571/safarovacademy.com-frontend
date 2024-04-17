@@ -66,7 +66,7 @@ export default function Navbar() {
             : "hidden"
         }`}
       >
-        <div className=" bg-[#171719] flex justify-between items-center py-6 px-8 mx-4 my-8 rounded-full">
+        <div className=" bg-[#171719] border-0 outline-none flex justify-between items-center py-6 px-8 mx-4 my-8 rounded-full">
           <Link
             to={"/"}
             className="text-[27px] font-semibold tracking-wider leading-9"
