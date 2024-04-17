@@ -12,12 +12,25 @@ const initialState: AllBlogs = {
   error: "",
 };
 
-export const getAllBlogs = createAsyncThunk("/getAllBlogs", async (setAllBlogs:any) => {
-  const url = "https://api.safarovacademy.com/api/v1/blog/";
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => setAllBlogs(data.results));
-});
+//https://api.safarovacademy.com/api/v1/blog/?category=3
+
+interface IItem {
+  setAllBlogs: any;
+  category: any;
+}
+
+export const getAllBlogs = createAsyncThunk(
+  "/getAllBlogs",
+  async (item: IItem) => {
+    //console.log( item.category==0 ? `https://api.safarovacademy.com/api/v1/blog/` :  `https://api.safarovacademy.com/api/v1/blog/?category=${item.category}` )
+    return fetch(
+      item.category==0 ? `https://api.safarovacademy.com/api/v1/blog/` :  `https://api.safarovacademy.com/api/v1/blog/?category=${item.category}` 
+    )
+      .then((response) => response.json())
+      .then((data) => item.setAllBlogs(data.results));
+  
+  }
+);
 
 const fetchAllblogs = createSlice({
   name: "fetchAllblogs",

@@ -1,24 +1,43 @@
 import Blogsbegin from "../../components/Blogs/Blogsbegin";
 import Layout from "../../layout/layout";
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { Link } from "react-router-dom";
 import { IBlog } from "../../pages/Singleblog/Singleblog";
 import { getAllBlogs } from "../../redux/reducers/fetchAllblogs";
+import { fetchCategories } from "../../redux/fetchAllcategories";
+
+interface ICategory {
+  category_name: string;
+  id: number;
+}
 
 function Blogs() {
   const [allBlogs, setAllBlogs] = useState<IBlog[] | null>(null);
 
+  const [category, setCategory] = useState<number>(0);
+
   const dispatch = useAppDispatch();
 
+  const categories: ICategory[] = useAppSelector(
+    (state) => state.fetchAllcategories.categoires.results
+  );
+
   useEffect(() => {
-    dispatch(getAllBlogs(setAllBlogs));
-  }, []);
+    dispatch(getAllBlogs({setAllBlogs:setAllBlogs,category:category}));
+    dispatch(fetchCategories());
+  }, [category]);
 
   const [query, setQuery] = useState<string>("");
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
   }
+
+  function takeId(id:number){
+   setCategory(Number(id))
+  }
+
+ 
 
   const filterBlogs =
     allBlogs &&
@@ -42,13 +61,29 @@ function Blogs() {
           />
         </div>
 
+        <div className=" my-16 flex justify-center">
+          <div className="xl:w-4/5 lg:w-4/5 md:w-4/5 sm:w-full">
+            {categories?.map((item: ICategory) => {
+              return (
+                <button
+                onClick={()=>takeId(item.id)}
+                  key={item.id}
+                  className="text-lg mr-2 my-2 px-6 py-3 rounded-full bg-[#171719]"
+                >
+                  {item.category_name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="grid xl:grid-cols-6 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6 mt-20">
-          {filterBlogs?.map((item: IBlog) => {
+          {filterBlogs?.slice(0, 2).map((item: IBlog) => {
             return (
               <Link
                 key={item.id}
                 to={`/blogs/${item.id}`}
-                className="col-span-2 border flex justify-center "
+                className="col-span-2  flex justify-center "
               >
                 <div>
                   <img

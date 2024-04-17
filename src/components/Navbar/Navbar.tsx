@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import {  useState,useEffect } from "react";
 import Sendlink from "../../atoms/Navbar/Sendlink";
 
 export default function Navbar() {
