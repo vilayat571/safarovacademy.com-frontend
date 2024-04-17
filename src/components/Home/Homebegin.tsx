@@ -21,7 +21,7 @@ function Homebegin() {
 
         <div>
           <Link to={myCV} target="blank" className="relative top-5 px-8 py-3 rounded-full text-base border-[1px] border-white ">
-            Check out my CV{" "}
+            Check out my CV
             <Arrrow style={"-rotate-45 ml-[2px] mt-[3px] text-base "} />
           </Link>
         </div>

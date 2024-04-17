@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import Sendlink from "../../atoms/Navbar/Sendlink";
 
@@ -23,13 +23,11 @@ export default function Navbar() {
       .then((data) => setName(data.username));
   }, []);
 
- 
-
   return (
     <div>
       <div className=" flex justify-center align-middle">
-        <div className="w-[85%] rounded-full bg-[#171719] xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-16 md:px-12 sm:px-8 py-6 flex justify-between items-center">
-          <div className=" xl:text-[27px] lg:text-[27px] md:text-2xl sm:text-2xl xl:font-bold sm:font-normal">
+        <div className="xl:w-[85%] lg:w-[85%] md:w-[85%] sm:w-[91%] rounded-full bg-[#171719] xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-16 md:px-12 sm:px-8 py-6 flex justify-between items-center">
+          <div className=" text-[27px] font-semibold tracking-wider leading-9">
             <Link to={"/"}> safarov.</Link>
           </div>
 
@@ -63,10 +61,38 @@ export default function Navbar() {
       </div>
       <div
         className={`border *: ${
-          sideOpen ? "block" : "hidden"
-        } h-fit w-screen z-10`}
+          sideOpen
+            ? "block w-full bg-[#121316] h-screen fixed top-0 z-10"
+            : "hidden"
+        }`}
       >
-        Navbar
+        <div className=" bg-[#171719] flex justify-between items-center py-6 px-8 mx-4 my-8 rounded-full">
+          <Link
+            to={"/"}
+            className="text-[27px] font-semibold tracking-wider leading-9"
+          >
+            {" "}
+            safarov.
+          </Link>
+          <button>
+            <FontAwesomeIcon
+              onClick={openSidebar}
+              className=" mr-2 text-2xl"
+              icon={faTimes}
+            />
+          </button>
+        </div>
+        <div className="grid grid-cols-1 mx-8 text-xl gap-y-1">
+        <Link className="mx-4" to="/blogs">
+              Blogs
+            </Link>
+            <Link className="mx-4" to="/askquestion">
+              Ask a question
+            </Link>
+            <Link className="mx-4" to="/">
+              Who I'am
+            </Link>
+        </div>
       </div>
     </div>
   );
