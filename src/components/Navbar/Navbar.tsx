@@ -73,7 +73,7 @@ export default function Navbar() {
             className="text-[27px] font-semibold tracking-wider leading-9"
           >
             {" "}
-            safarov.
+            safarov
           </Link>
           <button>
             <FontAwesomeIcon
