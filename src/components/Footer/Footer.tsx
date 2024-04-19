@@ -5,9 +5,9 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
-    <div className="mt-32 mb-0  flex justify-center items-center  ">
+    <div className="mt-32 mb-0 flex justify-center items-center  ">
       <div
-        className="bg-[#171719]  w-[85%] px-16 py-12 rounded-xl 
+        className="bg-[#171719]  w-[84%] px-16 py-12 rounded-xl 
       grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1"
       >
         <div

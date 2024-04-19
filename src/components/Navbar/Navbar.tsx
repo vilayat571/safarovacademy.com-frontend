@@ -31,7 +31,8 @@ export default function Navbar() {
             <Link to={"/"}> safarov.</Link>
           </div>
 
-          <div className="flex xl:block lg:block md:hidden sm:hidden text-[17px] font-medium text-[#C3C3C3] justify-between ">
+          <div className="flex xl:block lg:block md:hidden sm:hidden text-lg
+           tracking-wide text-[#C3C3C3] justify-between ">
             <Link className="mx-4" to="/blogs">
               Blogs
             </Link>
@@ -44,9 +45,9 @@ export default function Navbar() {
           </div>
 
           <Sendlink
-            divStyle={"xl:block lg:block md:hidden sm:hidden"}
-            arrowStyle={"-rotate-45 mr-2 text-[17px] text-white font-medium"}
-            textLink={object == null ? "Let's join" : name}
+            divStyle={"xl:block lg:block md:hidden sm:hidden text-lg leading-9 tracking-wide"}
+            arrowStyle={"-rotate-45 mr-2 text-lg text-white font-medium"}
+            textLink={object == null ? "Let's join me" : name}
             pathLink={object == null ? "/signin" : "/dashboard"}
           />
 
@@ -59,31 +60,32 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div
-        className={`border *: ${
+      <div className={`*: ${
           sideOpen
-            ? "block w-full bg-[#121316] h-screen fixed top-0 z-10"
+            ? "flex justify-center  w-full bg-[#121316] h-screen fixed top-0 z-10"
             : "hidden"
-        }`}
+        }`}>
+      <div
+        className=" w-11/12 relative top-10"
       >
-        <div className=" bg-[#171719] w-full border-0 outline-none flex justify-between items-center
-         py-6 px-8 mx-4 my-8 rounded-full">
+        <div className=" bg-[#171719] m outline-none flex justify-between items-center
+         py-6 px-8 mb-6  rounded-full ">
           <Link
             to={"/"}
             className="text-[27px] font-semibold tracking-wider leading-9"
           >
-            {" "}
+      
             safarov
           </Link>
           <button>
             <FontAwesomeIcon
               onClick={openSidebar}
-              className=" mr-2 text-2xl"
+              className=" text-2xl"
               icon={faTimes}
             />
           </button>
         </div>
-        <div className="grid grid-cols-1 mx-8 text-xl gap-y-1">
+        <div className="grid grid-cols-1 mx-5 text-xl">
         <Link className="mx-4" to="/blogs">
               Blogs
             </Link>
@@ -94,6 +96,7 @@ export default function Navbar() {
               Who I'am
             </Link>
         </div>
+      </div>
       </div>
     </div>
   );
