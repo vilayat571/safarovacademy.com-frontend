@@ -7,8 +7,10 @@ function Footer() {
   return (
     <div className="mt-32 mb-0 flex justify-center items-center  ">
       <div
-        className="bg-[#171719]  w-[84%] px-16 py-12 rounded-xl 
-      grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1"
+        className="bg-[#171719] w-[84%] rounded-xl 
+      grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1
+      xl:px-16 lg:px-16 md:px-16 sm:px-8 xl:py-12 lg:py-12 md:py-12 sm:py-8
+      "
       >
         <div
           className="col-span-1
@@ -66,7 +68,7 @@ function Footer() {
             "
           >
             <div
-              className="relative xl:left-3 lg:left-3 md:v sm:-left-11
+              className="relative xl:left-3 lg:left-3 md:left-3 sm:-left-16
                xl:flex lg:flex md:flex sm:block mt-8 "
             >
               <Link
@@ -83,7 +85,7 @@ function Footer() {
              xl:ml-8 md:ml-8 lg:ml-8 sm:ml-0 block"
               >
                 <FontAwesomeIcon
-                  className="mr-[6px] text-xl"
+                  className="mr-[6px] ml-[2px] text-xl"
                   icon={faLinkedin}
                 />
                 Linkedin
