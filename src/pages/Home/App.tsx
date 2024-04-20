@@ -8,14 +8,11 @@ import Layout from "../../layout/layout";
 function App() {
   return (
     <Layout>
-      <div>
-        <Homebegin />
-        <Imageinfo />
-        <Offer />
-        <ContentImg />
-        <ContentImg2 />
-   
-      </div>
+      <Homebegin />
+      <Imageinfo />
+      <Offer />
+      <ContentImg />
+      <ContentImg2 />
     </Layout>
   );
 }
