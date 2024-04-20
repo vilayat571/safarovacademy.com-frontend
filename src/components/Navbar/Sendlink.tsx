@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Arrrow from "../../atoms/Navbar/Arrrow";
+import Arrrow from "./Arrrow";
 
 export interface LinkInterface {
   divStyle: string;

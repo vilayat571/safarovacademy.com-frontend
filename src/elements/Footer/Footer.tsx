@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Arrrow from "../../atoms/Navbar/Arrrow";
+import Arrrow from "../../components/Navbar/Arrrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 

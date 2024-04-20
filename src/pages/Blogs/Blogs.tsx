@@ -1,4 +1,4 @@
-import Blogsbegin from "../../components/Blogs/Blogsbegin";
+import Blogsbegin from "../../elements/Blogs/Blogsbegin";
 import Layout from "../../layout/layout";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";

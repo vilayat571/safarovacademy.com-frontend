@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Arrrow from "../../atoms/Navbar/Arrrow";
+import Arrrow from "../Navbar/Arrrow";
 import myCV from "../../assets/images/Vilayat_Safarov_CV.pdf";
 
 function HomebeginText() {

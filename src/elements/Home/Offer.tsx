@@ -1,4 +1,4 @@
-import Offerintro from "../../atoms/Home/Offerintro";
+import Offerintro from "../../components/Home/Offerintro";
 import OfferContent from "./OfferContent";
 
 function Offer() {

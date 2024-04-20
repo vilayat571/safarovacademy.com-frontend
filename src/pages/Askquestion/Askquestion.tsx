@@ -1,5 +1,5 @@
-import Formofasking from "../../components/Ask/Formofasking";
-import IntroofAsk from "../../components/Ask/IntroofAsk";
+import Formofasking from "../../elements/Ask/Formofasking";
+import IntroofAsk from "../../elements/Ask/IntroofAsk";
 import Layout from "../../layout/layout";
 
 function Askquestion() {

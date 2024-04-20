@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {  useState,useEffect } from "react";
-import Sendlink from "../../atoms/Navbar/Sendlink";
+import Sendlink from "../../components/Navbar/Sendlink";
 
 export default function Navbar() {
   const [sideOpen, setSideOpen] = useState(false);

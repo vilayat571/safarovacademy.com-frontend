@@ -1,5 +1,5 @@
-import ImageinfoImg from "../../atoms/Home/ImageinfoImg";
-import ImageinfoText from "../../atoms/Home/ImageinfoText";
+import ImageinfoImg from "../../components/Home/ImageinfoImg";
+import ImageinfoText from "../../components/Home/ImageinfoText";
 
 function Imageinfo() {
   return (

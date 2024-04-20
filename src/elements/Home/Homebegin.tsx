@@ -1,5 +1,5 @@
-import HomebeginImg from "../../atoms/Home/HomebeginImg";
-import HomebeginText from "../../atoms/Home/HomebeginText";
+import HomebeginImg from "../../components/Home/HomebeginImg";
+import HomebeginText from "../../components/Home/HomebeginText";
 
 function Homebegin() {
   return (

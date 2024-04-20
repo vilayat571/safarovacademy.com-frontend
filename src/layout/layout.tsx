@@ -1,6 +1,6 @@
-import Footer from "../components/Footer/Footer";
-import Mainlay from "../components/Layout/Mainlay";
-import Navbar from "../components/Navbar/Navbar";
+import Footer from "../elements/Footer/Footer";
+import Mainlay from "../elements/Layout/Mainlay";
+import Navbar from "../elements/Navbar/Navbar";
 
 function Layout(props: any) {
   return (
