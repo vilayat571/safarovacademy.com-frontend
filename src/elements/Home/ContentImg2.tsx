@@ -10,6 +10,7 @@ function ContentImg2() {
         className="col-span-1 flex justify-start w-[350px] xl:h-[250px] lg:h-[280px] md:h-[358px] sm:h-[200px] object-cover	"
         alt=""
       />
+
       <div className="col-span-1 flex justify-end">
         <div className="">
           <p
