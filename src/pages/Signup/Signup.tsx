@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -12,11 +12,7 @@ export interface FormSignup {
   password: string;
 }
 
-interface IError{
-  error:{
-    item:any
-  }
-}
+
 
 interface HandleChangeSignup {
   (e: React.ChangeEvent<HTMLInputElement>): void;
@@ -35,7 +31,6 @@ function Signup() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const navigate = useNavigate();
 
   const error = useAppSelector((state) => state.signUpSlice.error);
 
