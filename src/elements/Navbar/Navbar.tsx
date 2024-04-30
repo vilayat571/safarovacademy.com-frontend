@@ -16,6 +16,8 @@ export default function Navbar() {
   const data: any = localStorage.getItem("signIn");
   const object = JSON.parse(data);
 
+  console.log(object)
+
   useEffect(() => {
     const url = `https://api.safarovacademy.com/api/v1/account/${object?.userId}`;
     fetch(url)
@@ -26,13 +28,13 @@ export default function Navbar() {
   return (
     <div>
       <div className=" flex justify-center align-middle tracking-wide">
-        <div className="xl:w-[85%] lg:w-[85%] md:w-[85%] sm:w-[91%] rounded-full bg-[#171719]
-         xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-14 md:px-12 sm:px-8 py-5 flex justify-between items-center">
+        <div className="xl:w-[85%] lg:w-[85%] md:w-[85%] sm:w-[91%] rounded-full bg-[#1F2025]
+         xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-14 md:px-12 sm:px-8 py-4 flex justify-between items-center">
           <div className=" text-[27px] font-semibold tracking-wider leading-9">
             <Link to={"/"}> safarov.</Link>
           </div>
 
-          <div className="flex xl:block lg:block md:hidden sm:hidden text-lg
+          <div className="flex xl:block lg:block md:hidden sm:hidden text-normal
            tracking-wide text-[#C3C3C3] justify-between ">
             <Link className="mx-4" to="/blogs">
               Blogs
@@ -46,8 +48,8 @@ export default function Navbar() {
           </div>
 
           <Sendlink
-            divStyle={"xl:block lg:block md:hidden sm:hidden text-lg leading-9 tracking-wide"}
-            arrowStyle={"-rotate-45 mr-2 text-lg text-white font-medium"}
+            divStyle={"xl:block lg:block md:hidden sm:hidden text-normal leading-9 tracking-wide"}
+            arrowStyle={"-rotate-45 mr-2 text-normal text-white font-medium"}
             textLink={object == null ? "Let's join me" : name}
             pathLink={object == null ? "/signin" : "/dashboard"}
           />

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -12,7 +12,11 @@ export interface FormSignup {
   password: string;
 }
 
-
+interface IError{
+  error:{
+    item:any
+  }
+}
 
 interface HandleChangeSignup {
   (e: React.ChangeEvent<HTMLInputElement>): void;
@@ -31,23 +35,33 @@ function Signup() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  ///const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const error = useAppSelector((state) => state.signUpSlice.error);
 
+  console.log(error[0])
+
   const StopRender = (e: React.FormEvent<HTMLFormElement>) => {
-    if (
-      form.email.length > 0 &&
-      form.username.length > 0 &&
-      form.password.length > 0
-    ) {
-      dispatch(signUpform(form));
-      // navigate("/signin");
-      if (error.email || error.password || error.username || error.email && error.password ) {
-        alert(error.email[0] || error.username[0]);
-      }
-    }
     e.preventDefault();
+    dispatch(signUpform(form));
+
+    // if (form.password.length < 8 ) {
+    //   alert("Password must contain mnimum 8 symbols");
+    // } else {
+    //   dispatch(signUpform(form));
+    //   if (error.email || error.username || error.password) {
+    //     alert(
+    //       error.email
+    //         ? error.email[0]
+    //         : error.password
+    //         ? error.password[0]
+    //         : error.username
+    //         ? error.username[0]
+    //         : ""
+    //     );
+    //   } 
+    // }
+
   };
 
   return (
@@ -55,38 +69,41 @@ function Signup() {
       <div className=" text-center flex justify-center items-center col-span-2 text-black">
         <div className=" relative top-[52px]">
           <p className="">
-            <span className="text-[26px] font-semibold text-white">
+            <span className="text-[27px] font-semibold text-white">
               Create an account{" "}
             </span>
           </p>
           <form className="mt-4" onSubmit={(e) => StopRender(e)}>
             <input
+              required={true}
               type="text"
               id="username"
               placeholder="Username"
-              className=" h-13 outline-none rounded text-[#c3c3c3] px-6 text-base p-4 my-2 w-11/12 bg-[#232323]"
+              className=" h-13 tracking-wide outline-none rounded-sm text-[#c3c3c3] px-6 text-sm p-4 my-2 w-10/12 bg-[#232323]"
               value={form.username}
               onChange={(e) => handleChange(e)}
             />
             <input
+              required={true}
               type="text"
               id="email"
               placeholder="E-mail"
-              className=" h-13 outline-none rounded text-[#c3c3c3] px-6 text-base p-4 my-2 w-11/12 bg-[#232323]"
+              className="  h-13 tracking-wide outline-none rounded-sm text-[#c3c3c3] px-6 text-sm p-4 my-2 w-10/12 bg-[#232323]"
               value={form.email}
               onChange={(e) => handleChange(e)}
             />
 
             <input
+              required={true}
               type="text"
               id="password"
               placeholder="Password"
-              className=" h-13 outline-none rounded text-[#c3c3c3] px-6 text-base p-4 my-2 w-11/12 bg-[#232323]"
+              className="  h-13 tracking-wide outline-none rounded-sm text-[#c3c3c3] px-6 text-sm p-4 my-2 w-10/12 bg-[#232323]"
               value={form.password}
               onChange={(e) => handleChange(e)}
             />
             <br />
-            <button className=" w-32 h-12 text-base text-white mt-4 round bg-[#232323]">
+            <button className=" w-28 h-10 text-sm tracking-wide text-white mt-3 rounded-sm bg-[#232323]">
               Sign up
             </button>
           </form>

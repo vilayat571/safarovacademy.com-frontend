@@ -24,6 +24,8 @@ function Signin() {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const dispatch = useAppDispatch();
 
   const handleChange: HandleChangeFunc = (e) => {
@@ -32,13 +34,23 @@ function Signin() {
 
   const navigate = useNavigate();
 
-  const stopRender: StopRender = (e) => {
-    e.preventDefault();
-    dispatch(submitSigninForm(form));
-    navigate("/");
-  };
+  const [text, setText] = useState(true);
 
-  return (
+  const loadingPart = (
+    <div className="bg-[#000] w-full h-screen flex justify-center items-center">
+      {text ? (
+        <img
+          src="https://cdn-images-1.medium.com/max/800/0*3IFEy-hfoIpgFjBl.gif"
+          className="w-[200px] h-[200px] object-contain"
+          alt=""
+        />
+      ) : (
+        "Success!"
+      )}
+    </div>
+  );
+
+  const realPart = (
     <div className="grid xl:grid-cols-4 lg:grid-cols-4  md:grid-cols-4 sm:grid-cols-2 w-full h-screen">
       <div className=" text-center flex justify-center items-center col-span-2 text-black">
         <div className=" relative top-[52px]">
@@ -116,6 +128,22 @@ function Signin() {
       </div>
     </div>
   );
+
+  const stopRender: StopRender = (e) => {
+    e.preventDefault();
+    dispatch(submitSigninForm(form));
+    setLoading(true);
+
+    setTimeout(() => {
+      setText(false);
+    }, 2000);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
+
+  return <>{loading ? loadingPart : realPart}</>;
 }
 
 export default Signin;

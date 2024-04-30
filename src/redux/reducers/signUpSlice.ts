@@ -21,7 +21,6 @@ export const signUpform = createAsyncThunk(
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-
       body: JSON.stringify({
         email: form.email,
         username: form.username,

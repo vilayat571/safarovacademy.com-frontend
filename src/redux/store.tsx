@@ -4,13 +4,15 @@ import signinSlice from "./reducers/signinSlice";
 import signUpSlice from "./reducers/signUpSlice";
 import fetchAllblogs from "./reducers/fetchAllblogs";
 import fetchAllcategories from "./fetchAllcategories";
+import introBlogsSlice from "./reducers/introBlogsSlice";
 
 export const store = configureStore({
   reducer: {
     signinSlice: signinSlice,
     signUpSlice:signUpSlice,
     fetchAllblogs:fetchAllblogs,
-    fetchAllcategories:fetchAllcategories
+    fetchAllcategories:fetchAllcategories,
+    introBlogsSlice:introBlogsSlice
   },
 });
 
