@@ -33,7 +33,7 @@ export const submitSigninForm = createAsyncThunk(
           "signIn",
           JSON.stringify({
             token: result.refresh,
-            userId: result.user_details.id,
+            username: result.user_details.username,
           })
         )
       );

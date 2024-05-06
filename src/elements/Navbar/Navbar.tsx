@@ -18,12 +18,12 @@ export default function Navbar() {
 
   console.log(object)
 
-  useEffect(() => {
-    const url = `https://api.safarovacademy.com/api/v1/account/${object?.userId}`;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setName(data.username));
-  }, []);
+  // useEffect(() => {
+  //   const url = `https://api.safarovacademy.com/api/v1/account/${object?.userId}`;
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => setName(data.username));
+  // }, []);
 
   return (
     <div>
@@ -50,7 +50,7 @@ export default function Navbar() {
           <Sendlink
             divStyle={"xl:block lg:block md:hidden sm:hidden text-normal leading-9 tracking-wide"}
             arrowStyle={"-rotate-45 mr-2 text-normal text-white font-medium"}
-            textLink={object == null ? "Let's join me" : name}
+            textLink={object == null ? "Let's join me" : object?.username}
             pathLink={object == null ? "/signin" : "/dashboard"}
           />
 
