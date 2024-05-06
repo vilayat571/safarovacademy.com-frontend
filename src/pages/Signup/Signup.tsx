@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { useAppDispatch } from "../../redux/store";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -11,8 +11,6 @@ export interface FormSignup {
   username: string;
   password: string;
 }
-
-
 
 interface HandleChangeSignup {
   (e: React.ChangeEvent<HTMLInputElement>): void;
@@ -30,16 +28,12 @@ function Signup() {
   const handleChange: HandleChangeSignup = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
-
-
-  const error = useAppSelector((state) => state.signUpSlice.error);
-
-  console.log(error[0])
+  const navigate = useNavigate();
 
   const StopRender = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(signUpform(form));
-
+    navigate("/signin");
     // if (form.password.length < 8 ) {
     //   alert("Password must contain mnimum 8 symbols");
     // } else {
@@ -54,9 +48,8 @@ function Signup() {
     //         ? error.username[0]
     //         : ""
     //     );
-    //   } 
+    //   }
     // }
-
   };
 
   return (
