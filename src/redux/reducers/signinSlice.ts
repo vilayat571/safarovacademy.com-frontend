@@ -16,7 +16,7 @@ const initialState: InitialState = {
 export const submitSigninForm = createAsyncThunk(
   "/sendForm",
   async (form: Form) => {
-    const url = "http://194.15.52.124:8000/api/v1/account/login/";
+    const url = "https://api.safarovacademy.com/api/v1/account/login/";
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
