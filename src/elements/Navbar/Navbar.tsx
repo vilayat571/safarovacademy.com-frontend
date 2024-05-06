@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import {  useState,useEffect } from "react";
+import {  useState } from "react";
 import Sendlink from "../../components/Navbar/Sendlink";
 
 export default function Navbar() {
@@ -11,19 +11,8 @@ export default function Navbar() {
     setSideOpen(!sideOpen);
   }
 
-  const [name, setName] = useState<string | any>("");
-
   const data: any = localStorage.getItem("signIn");
   const object = JSON.parse(data);
-
-  console.log(object)
-
-  // useEffect(() => {
-  //   const url = `https://api.safarovacademy.com/api/v1/account/${object?.userId}`;
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => setName(data.username));
-  // }, []);
 
   return (
     <div>
