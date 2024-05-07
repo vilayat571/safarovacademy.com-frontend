@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
 
+  const storedCount = localStorage.getItem("pageVisits");
+  
   useEffect(() => {
-    const storedCount = localStorage.getItem("pageVisits");
+ 
     const initialCount: any = storedCount ? Number(storedCount) : 0;
     setCount(initialCount + 1);
     localStorage.setItem("pageVisits", initialCount + 1);
