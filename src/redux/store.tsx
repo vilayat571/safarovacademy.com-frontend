@@ -5,6 +5,7 @@ import signUpSlice from "./reducers/signUpSlice";
 import fetchAllblogs from "./reducers/fetchAllblogs";
 import fetchAllcategories from "./fetchAllcategories";
 import introBlogsSlice from "./reducers/introBlogsSlice";
+import askQuestion from "./reducers/askQuestion";
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +13,8 @@ export const store = configureStore({
     signUpSlice:signUpSlice,
     fetchAllblogs:fetchAllblogs,
     fetchAllcategories:fetchAllcategories,
-    introBlogsSlice:introBlogsSlice
+    introBlogsSlice:introBlogsSlice,
+    askQuestion:askQuestion
   },
 });
 

@@ -11,7 +11,7 @@ import Signin from "./pages/Signin/Signin.tsx";
 import Signup from "./pages/Signup/Signup.tsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.tsx";
-import Dashboard from "./pages/Dashboard/Dashboard.tsx";
+import Admin from "./pages/Admin/Admin.tsx";
 
 const router = createBrowserRouter([
   {
@@ -39,9 +39,9 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
-  {
+    {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <Admin />,
   },
 ]);
 

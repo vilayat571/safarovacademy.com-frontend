@@ -1,0 +1,768 @@
+{
+    "name": "ROOT",
+    "type": "dir",
+    "fullPath": "",
+    "fileNumber": 64,
+    "lines": 2135,
+    "characters": 403350,
+    "childrens": [
+        {
+            "name": ".vite",
+            "type": "dir",
+            "fullPath": "/.vite",
+            "fileNumber": 0,
+            "lines": 0,
+            "characters": 0,
+            "childrens": []
+        },
+        {
+            "name": "dist",
+            "type": "dir",
+            "fullPath": "/dist",
+            "fileNumber": 3,
+            "lines": 17,
+            "characters": 343388,
+            "childrens": [
+                {
+                    "name": "assets",
+                    "type": "dir",
+                    "fullPath": "/dist/assets",
+                    "fileNumber": 2,
+                    "lines": 2,
+                    "characters": 342787,
+                    "childrens": [
+                        {
+                            "name": "index-BS8h4kdz.js",
+                            "type": "file",
+                            "fullPath": "/dist/assets/index-BS8h4kdz.js",
+                            "lines": 1,
+                            "characters": 325708
+                        },
+                        {
+                            "name": "index-DQvTtEIO.css",
+                            "type": "file",
+                            "fullPath": "/dist/assets/index-DQvTtEIO.css",
+                            "lines": 1,
+                            "characters": 17079
+                        }
+                    ]
+                },
+                {
+                    "name": "index.html",
+                    "type": "file",
+                    "fullPath": "/dist/index.html",
+                    "lines": 15,
+                    "characters": 601
+                }
+            ]
+        },
+        {
+            "name": "public",
+            "type": "dir",
+            "fullPath": "/public",
+            "fileNumber": 0,
+            "lines": 0,
+            "characters": 0,
+            "childrens": []
+        },
+        {
+            "name": "src",
+            "type": "dir",
+            "fullPath": "/src",
+            "fileNumber": 50,
+            "lines": 1985,
+            "characters": 57243,
+            "childrens": [
+                {
+                    "name": "assets",
+                    "type": "dir",
+                    "fullPath": "/src/assets",
+                    "fileNumber": 3,
+                    "lines": 119,
+                    "characters": 4862,
+                    "childrens": [
+                        {
+                            "name": "images",
+                            "type": "dir",
+                            "fullPath": "/src/assets/images",
+                            "fileNumber": 0,
+                            "lines": 0,
+                            "characters": 0,
+                            "childrens": []
+                        },
+                        {
+                            "name": "Poppins",
+                            "type": "dir",
+                            "fullPath": "/src/assets/Poppins",
+                            "fileNumber": 1,
+                            "lines": 94,
+                            "characters": 4479,
+                            "childrens": [
+                                {
+                                    "name": "OFL.txt",
+                                    "type": "file",
+                                    "fullPath": "/src/assets/Poppins/OFL.txt",
+                                    "lines": 94,
+                                    "characters": 4479
+                                }
+                            ]
+                        },
+                        {
+                            "name": "styles",
+                            "type": "dir",
+                            "fullPath": "/src/assets/styles",
+                            "fileNumber": 1,
+                            "lines": 25,
+                            "characters": 383,
+                            "childrens": [
+                                {
+                                    "name": "index.css",
+                                    "type": "file",
+                                    "fullPath": "/src/assets/styles/index.css",
+                                    "lines": 25,
+                                    "characters": 383
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "atoms",
+                    "type": "dir",
+                    "fullPath": "/src/atoms",
+                    "fileNumber": 0,
+                    "lines": 0,
+                    "characters": 0,
+                    "childrens": []
+                },
+                {
+                    "name": "components",
+                    "type": "dir",
+                    "fullPath": "/src/components",
+                    "fileNumber": 11,
+                    "lines": 279,
+                    "characters": 7597,
+                    "childrens": [
+                        {
+                            "name": "Footer",
+                            "type": "dir",
+                            "fullPath": "/src/components/Footer",
+                            "fileNumber": 0,
+                            "lines": 0,
+                            "characters": 0,
+                            "childrens": []
+                        },
+                        {
+                            "name": "Home",
+                            "type": "dir",
+                            "fullPath": "/src/components/Home",
+                            "fileNumber": 7,
+                            "lines": 203,
+                            "characters": 6170,
+                            "childrens": [
+                                {
+                                    "name": "ContentImgComp.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/ContentImgComp.tsx",
+                                    "lines": 45,
+                                    "characters": 1303
+                                },
+                                {
+                                    "name": "HomebeginImg.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/HomebeginImg.tsx",
+                                    "lines": 14,
+                                    "characters": 412
+                                },
+                                {
+                                    "name": "HomebeginText.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/HomebeginText.tsx",
+                                    "lines": 36,
+                                    "characters": 1081
+                                },
+                                {
+                                    "name": "ImageinfoImg.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/ImageinfoImg.tsx",
+                                    "lines": 35,
+                                    "characters": 1332
+                                },
+                                {
+                                    "name": "ImageinfoText.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/ImageinfoText.tsx",
+                                    "lines": 16,
+                                    "characters": 355
+                                },
+                                {
+                                    "name": "OffercontentComp.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/OffercontentComp.tsx",
+                                    "lines": 39,
+                                    "characters": 1251
+                                },
+                                {
+                                    "name": "Offerintro.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Home/Offerintro.tsx",
+                                    "lines": 18,
+                                    "characters": 436
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Navbar",
+                            "type": "dir",
+                            "fullPath": "/src/components/Navbar",
+                            "fileNumber": 3,
+                            "lines": 76,
+                            "characters": 1427,
+                            "childrens": [
+                                {
+                                    "name": "Arrrow.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Navbar/Arrrow.tsx",
+                                    "lines": 16,
+                                    "characters": 327
+                                },
+                                {
+                                    "name": "Items.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Navbar/Items.tsx",
+                                    "lines": 38,
+                                    "characters": 653
+                                },
+                                {
+                                    "name": "Sendlink.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/components/Navbar/Sendlink.tsx",
+                                    "lines": 22,
+                                    "characters": 447
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "elements",
+                    "type": "dir",
+                    "fullPath": "/src/elements",
+                    "fileNumber": 16,
+                    "lines": 675,
+                    "characters": 20396,
+                    "childrens": [
+                        {
+                            "name": "Ask",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Ask",
+                            "fileNumber": 2,
+                            "lines": 130,
+                            "characters": 3926,
+                            "childrens": [
+                                {
+                                    "name": "Formofasking.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Ask/Formofasking.tsx",
+                                    "lines": 88,
+                                    "characters": 2636
+                                },
+                                {
+                                    "name": "IntroofAsk.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Ask/IntroofAsk.tsx",
+                                    "lines": 42,
+                                    "characters": 1290
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Blogs",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Blogs",
+                            "fileNumber": 2,
+                            "lines": 47,
+                            "characters": 1309,
+                            "childrens": [
+                                {
+                                    "name": "Bloglar.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Blogs/Bloglar.tsx",
+                                    "lines": 10,
+                                    "characters": 102
+                                },
+                                {
+                                    "name": "Blogsbegin.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Blogs/Blogsbegin.tsx",
+                                    "lines": 37,
+                                    "characters": 1207
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Footer",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Footer",
+                            "fileNumber": 1,
+                            "lines": 102,
+                            "characters": 3450,
+                            "childrens": [
+                                {
+                                    "name": "Footer.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Footer/Footer.tsx",
+                                    "lines": 102,
+                                    "characters": 3450
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Home",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Home",
+                            "fileNumber": 8,
+                            "lines": 259,
+                            "characters": 7719,
+                            "childrens": [
+                                {
+                                    "name": "ContentImg.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/ContentImg.tsx",
+                                    "lines": 46,
+                                    "characters": 1433
+                                },
+                                {
+                                    "name": "ContentImg2.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/ContentImg2.tsx",
+                                    "lines": 58,
+                                    "characters": 1953
+                                },
+                                {
+                                    "name": "Homebegin.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/Homebegin.tsx",
+                                    "lines": 14,
+                                    "characters": 363
+                                },
+                                {
+                                    "name": "Imageinfo.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/Imageinfo.tsx",
+                                    "lines": 14,
+                                    "characters": 406
+                                },
+                                {
+                                    "name": "IntroBlogs.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/IntroBlogs.tsx",
+                                    "lines": 68,
+                                    "characters": 1967
+                                },
+                                {
+                                    "name": "Myblogs.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/Myblogs.tsx",
+                                    "lines": 10,
+                                    "characters": 99
+                                },
+                                {
+                                    "name": "Offer.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/Offer.tsx",
+                                    "lines": 14,
+                                    "characters": 259
+                                },
+                                {
+                                    "name": "OfferContent.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Home/OfferContent.tsx",
+                                    "lines": 35,
+                                    "characters": 1239
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Layout",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Layout",
+                            "fileNumber": 1,
+                            "lines": 12,
+                            "characters": 207,
+                            "childrens": [
+                                {
+                                    "name": "Mainlay.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Layout/Mainlay.tsx",
+                                    "lines": 12,
+                                    "characters": 207
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Navbar",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Navbar",
+                            "fileNumber": 1,
+                            "lines": 113,
+                            "characters": 3670,
+                            "childrens": [
+                                {
+                                    "name": "Navbar.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Navbar/Navbar.tsx",
+                                    "lines": 113,
+                                    "characters": 3670
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Signin",
+                            "type": "dir",
+                            "fullPath": "/src/elements/Signin",
+                            "fileNumber": 1,
+                            "lines": 12,
+                            "characters": 115,
+                            "childrens": [
+                                {
+                                    "name": "Informativdiv.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/elements/Signin/Informativdiv.tsx",
+                                    "lines": 12,
+                                    "characters": 115
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "layout",
+                    "type": "dir",
+                    "fullPath": "/src/layout",
+                    "fileNumber": 1,
+                    "lines": 16,
+                    "characters": 354,
+                    "childrens": [
+                        {
+                            "name": "layout.tsx",
+                            "type": "file",
+                            "fullPath": "/src/layout/layout.tsx",
+                            "lines": 16,
+                            "characters": 354
+                        }
+                    ]
+                },
+                {
+                    "name": "pages",
+                    "type": "dir",
+                    "fullPath": "/src/pages",
+                    "fileNumber": 9,
+                    "lines": 519,
+                    "characters": 14574,
+                    "childrens": [
+                        {
+                            "name": "Admin",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Admin",
+                            "fileNumber": 1,
+                            "lines": 23,
+                            "characters": 436,
+                            "childrens": [
+                                {
+                                    "name": "Admin.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Admin/Admin.tsx",
+                                    "lines": 23,
+                                    "characters": 436
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Askquestion",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Askquestion",
+                            "fileNumber": 1,
+                            "lines": 17,
+                            "characters": 348,
+                            "childrens": [
+                                {
+                                    "name": "Askquestion.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Askquestion/Askquestion.tsx",
+                                    "lines": 17,
+                                    "characters": 348
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Blogs",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Blogs",
+                            "fileNumber": 1,
+                            "lines": 111,
+                            "characters": 3427,
+                            "childrens": [
+                                {
+                                    "name": "Blogs.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Blogs/Blogs.tsx",
+                                    "lines": 111,
+                                    "characters": 3427
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Dashboard",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Dashboard",
+                            "fileNumber": 1,
+                            "lines": 20,
+                            "characters": 336,
+                            "childrens": [
+                                {
+                                    "name": "Dashboard.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Dashboard/Dashboard.tsx",
+                                    "lines": 20,
+                                    "characters": 336
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Home",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Home",
+                            "fileNumber": 1,
+                            "lines": 23,
+                            "characters": 598,
+                            "childrens": [
+                                {
+                                    "name": "App.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Home/App.tsx",
+                                    "lines": 23,
+                                    "characters": 598
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Notfound",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Notfound",
+                            "fileNumber": 1,
+                            "lines": 31,
+                            "characters": 1003,
+                            "childrens": [
+                                {
+                                    "name": "Notfound.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Notfound/Notfound.tsx",
+                                    "lines": 31,
+                                    "characters": 1003
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Signin",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Signin",
+                            "fileNumber": 1,
+                            "lines": 124,
+                            "characters": 3531,
+                            "childrens": [
+                                {
+                                    "name": "Signin.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Signin/Signin.tsx",
+                                    "lines": 124,
+                                    "characters": 3531
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Signup",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Signup",
+                            "fileNumber": 1,
+                            "lines": 118,
+                            "characters": 3706,
+                            "childrens": [
+                                {
+                                    "name": "Signup.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Signup/Signup.tsx",
+                                    "lines": 118,
+                                    "characters": 3706
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Singleblog",
+                            "type": "dir",
+                            "fullPath": "/src/pages/Singleblog",
+                            "fileNumber": 1,
+                            "lines": 52,
+                            "characters": 1189,
+                            "childrens": [
+                                {
+                                    "name": "Singleblog.tsx",
+                                    "type": "file",
+                                    "fullPath": "/src/pages/Singleblog/Singleblog.tsx",
+                                    "lines": 52,
+                                    "characters": 1189
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "redux",
+                    "type": "dir",
+                    "fullPath": "/src/redux",
+                    "fileNumber": 7,
+                    "lines": 315,
+                    "characters": 7866,
+                    "childrens": [
+                        {
+                            "name": "reducers",
+                            "type": "dir",
+                            "fullPath": "/src/redux/reducers",
+                            "fileNumber": 5,
+                            "lines": 248,
+                            "characters": 5884,
+                            "childrens": [
+                                {
+                                    "name": "askQuestion.ts",
+                                    "type": "file",
+                                    "fullPath": "/src/redux/reducers/askQuestion.ts",
+                                    "lines": 60,
+                                    "characters": 1279
+                                },
+                                {
+                                    "name": "fetchAllblogs.ts",
+                                    "type": "file",
+                                    "fullPath": "/src/redux/reducers/fetchAllblogs.ts",
+                                    "lines": 49,
+                                    "characters": 1284
+                                },
+                                {
+                                    "name": "introBlogsSlice.ts",
+                                    "type": "file",
+                                    "fullPath": "/src/redux/reducers/introBlogsSlice.ts",
+                                    "lines": 35,
+                                    "characters": 823
+                                },
+                                {
+                                    "name": "signinSlice.ts",
+                                    "type": "file",
+                                    "fullPath": "/src/redux/reducers/signinSlice.ts",
+                                    "lines": 57,
+                                    "characters": 1352
+                                },
+                                {
+                                    "name": "signUpSlice.ts",
+                                    "type": "file",
+                                    "fullPath": "/src/redux/reducers/signUpSlice.ts",
+                                    "lines": 47,
+                                    "characters": 1146
+                                }
+                            ]
+                        },
+                        {
+                            "name": "fetchAllcategories.ts",
+                            "type": "file",
+                            "fullPath": "/src/redux/fetchAllcategories.ts",
+                            "lines": 42,
+                            "characters": 1004
+                        },
+                        {
+                            "name": "store.tsx",
+                            "type": "file",
+                            "fullPath": "/src/redux/store.tsx",
+                            "lines": 25,
+                            "characters": 978
+                        }
+                    ]
+                },
+                {
+                    "name": "main.tsx",
+                    "type": "file",
+                    "fullPath": "/src/main.tsx",
+                    "lines": 56,
+                    "characters": 1444
+                },
+                {
+                    "name": "react-app-env.d.ts",
+                    "type": "file",
+                    "fullPath": "/src/react-app-env.d.ts",
+                    "lines": 6,
+                    "characters": 150
+                }
+            ]
+        },
+        {
+            "name": ".eslintrc.cjs",
+            "type": "file",
+            "fullPath": "/.eslintrc.cjs",
+            "lines": 19,
+            "characters": 454
+        },
+        {
+            "name": ".gitignore",
+            "type": "file",
+            "fullPath": "/.gitignore",
+            "lines": 25,
+            "characters": 277
+        },
+        {
+            "name": "index.html",
+            "type": "file",
+            "fullPath": "/index.html",
+            "lines": 16,
+            "characters": 503
+        },
+        {
+            "name": "netlify.toml",
+            "type": "file",
+            "fullPath": "/netlify.toml",
+            "lines": 4,
+            "characters": 53
+        },
+        {
+            "name": "postcss.config.js",
+            "type": "file",
+            "fullPath": "/postcss.config.js",
+            "lines": 7,
+            "characters": 86
+        },
+        {
+            "name": "tailwind.config.js",
+            "type": "file",
+            "fullPath": "/tailwind.config.js",
+            "lines": 16,
+            "characters": 302
+        },
+        {
+            "name": "tsconfig.json",
+            "type": "file",
+            "fullPath": "/tsconfig.json",
+            "lines": 26,
+            "characters": 630
+        },
+        {
+            "name": "tsconfig.node.json",
+            "type": "file",
+            "fullPath": "/tsconfig.node.json",
+            "lines": 12,
+            "characters": 244
+        },
+        {
+            "name": "vite.config.ts",
+            "type": "file",
+            "fullPath": "/vite.config.ts",
+            "lines": 8,
+            "characters": 170
+        }
+    ]
+}

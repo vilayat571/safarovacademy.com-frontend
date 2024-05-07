@@ -1,4 +1,4 @@
-import {  createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Form } from "../../pages/Signin/Signin";
 
 export interface InitialState {
@@ -33,6 +33,7 @@ export const submitSigninForm = createAsyncThunk(
           "signIn",
           JSON.stringify({
             token: result.refresh,
+            access: result.access,
             username: result.user_details.username,
           })
         )
@@ -45,13 +46,10 @@ const signinSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(
-      submitSigninForm.pending,
-      (state: InitialState) => {
-        state.loading = false;
-        state.error = null;
-      }
-    );
+    builder.addCase(submitSigninForm.pending, (state: InitialState) => {
+      state.loading = false;
+      state.error = null;
+    });
   },
 });
 

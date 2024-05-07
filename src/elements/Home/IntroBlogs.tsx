@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { fetchSomeBlogs } from "../../redux/reducers/introBlogsSlice";
 import { IBlog } from "../../pages/Singleblog/Singleblog";
@@ -8,13 +8,17 @@ function IntroBlogs() {
   const blogs = useAppSelector(
     (state: RootState) => state.introBlogsSlice.data.results
   );
+
+  const data = useMemo(() => {
+    return blogs;
+  }, [blogs]);
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchSomeBlogs());
   }, []);
 
-  console.log("blogs", blogs);
 
   return (
     <div className="">
@@ -32,7 +36,7 @@ function IntroBlogs() {
         </p>
       </div>
       <div className="grid xl:grid-cols-6 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-8">
-        {blogs?.slice(0, 3).map((item: IBlog) => {
+        {data?.slice(0, 3).map((item: IBlog) => {
           return (
             <Link
               key={item.id}

@@ -51,15 +51,15 @@ function Signin() {
   );
 
   const realPart = (
-    <div className="grid xl:grid-cols-4 lg:grid-cols-4  md:grid-cols-4 sm:grid-cols-2 w-full h-screen">
-      <div className=" text-center flex justify-center items-center col-span-2 text-black">
-        <div className=" relative top-[52px]">
+    <div className="grid  w-full h-screen">
+      <div className=" text-center flex justify-center  items-center text-black">
+        <div className=" relative top-14">
           <p className="">
             <span className="text-[26px] font-semibold text-white">
               You're welcome!
             </span>
           </p>
-          <form className="mt-4" onSubmit={(e) => stopRender(e)}>
+          <form className="mt-4  " onSubmit={(e) => stopRender(e)}>
             <input
               type="text"
               id="email"
@@ -99,33 +99,7 @@ function Signin() {
           </div>
         </div>
       </div>
-      <div className=" tracking-wide flex justify-center items-center col-span-2 text-center bg-[#232323]">
-        <div className="relative top-8">
-          <p className="">
-            <span className="text-[26px] font-semibold text-white">
-              Come join us
-            </span>
-          </p>
-          <div className="w-full flex justify-center items-center">
-            <p className="mt-3 text-[17px] font-medium text-[#c3c3c3] w-3/5">
-              If you want to improve your skills and learn new technologies, and
-              also have questions about software programming, this is the best
-              opportunity for you. Come on, it is necessary to realize these,
-              let's log in!
-            </p>
-          </div>
-          <p className="mt-5">
-            <FontAwesomeIcon
-              className="-rotate-45 mr-2 text-base"
-              icon={faArrowRight}
-            />
 
-            <Link to="/" className="text-[17px] text-white font-medium">
-              Let's join
-            </Link>
-          </p>
-        </div>
-      </div>
     </div>
   );
 
