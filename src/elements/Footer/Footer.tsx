@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Arrrow from "../../components/Navbar/Arrrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Counter from "../../atoms/Footer/Visitorcount";
 
 function Footer() {
   return (
@@ -45,6 +46,7 @@ function Footer() {
             >
               Powered by <span className="underline">Vilayat Safarov</span>
             </Link>
+            <Counter />
           </div>
         </div>
         <div className="col-span-1 ">
@@ -91,6 +93,8 @@ function Footer() {
                 Linkedin
               </Link>
             </div>
+        
+           
           </div>
         </div>
       </div>
