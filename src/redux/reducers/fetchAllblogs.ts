@@ -12,37 +12,37 @@ const initialState: AllBlogs = {
   error: "",
 };
 
-//https://api.safarovacademy.com/api/v1/blog/?category=3
-
 interface IItem {
   setAllBlogs: any;
   category: any;
 }
 
-export const getAllBlogs = createAsyncThunk(
+export const getSomeblogs = createAsyncThunk(
   "/getAllBlogs",
   async (item: IItem) => {
-    //console.log( item.category==0 ? `https://api.safarovacademy.com/api/v1/blog/` :  `https://api.safarovacademy.com/api/v1/blog/?category=${item.category}` )
     return fetch(
-      item.category==0 ? `https://api.safarovacademy.com/api/v1/blog/` :  `https://api.safarovacademy.com/api/v1/blog/?category=${item.category}` 
+      item.category == 0
+        ? `https://api.safarovacademy.com/api/v1/blog/`
+        : `https://api.safarovacademy.com/api/v1/blog/?category=${item.category}`
     )
       .then((response) => response.json())
       .then((data) => item.setAllBlogs(data.results));
-  
   }
 );
+
 
 const fetchAllblogs = createSlice({
   name: "fetchAllblogs",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getAllBlogs.fulfilled, (state, action: PayloadAction) => {
+    builder.addCase(getSomeblogs.fulfilled, (state, action: PayloadAction) => {
       state.error = "";
       state.loading = false;
       state.blogs = action.payload;
     });
   },
 });
+
 
 export default fetchAllblogs.reducer;

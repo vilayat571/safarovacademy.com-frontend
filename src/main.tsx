@@ -12,6 +12,7 @@ import Signup from "./pages/Signup/Signup.tsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.tsx";
 import Admin from "./pages/Admin/Admin.tsx";
+import Question from "./components/Admin/Question.tsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/askquestion",
     element: <Askquestion />,
+  },
+  {
+    path: "/askquestion/myquestions",
+    element: <Question />,
   },
   {
     path: "/blogs",
@@ -39,7 +44,7 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
-    {
+  {
     path: "/dashboard",
     element: <Admin />,
   },

@@ -3,7 +3,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateOfCategories {
-  categoires: any;
+  categories: any;
   loading: false;
   error: any;
 }
@@ -17,7 +17,7 @@ export const fetchCategories = createAsyncThunk(
 );
 
 const initialState: InitialStateOfCategories = {
-  categoires: "",
+  categories: "",
   loading: false,
   error: "",
 };
@@ -30,7 +30,7 @@ const fetchAllcategories = createSlice({
     builder.addCase(
       fetchCategories.fulfilled,
       (state, action: PayloadAction) => {
-        state.categoires = action.payload;
+        state.categories = action.payload;
       }
     );
   },

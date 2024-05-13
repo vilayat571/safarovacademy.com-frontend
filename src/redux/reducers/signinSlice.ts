@@ -28,16 +28,18 @@ export const submitSigninForm = createAsyncThunk(
       }),
     })
       .then((response) => response.json())
-      .then((result) =>
+      .then((result) => {
+        console.log(result);
         localStorage.setItem(
           "signIn",
           JSON.stringify({
             token: result.refresh,
             access: result.access,
             username: result.user_details.username,
+            id: result.user_details.id,
           })
-        )
-      );
+        );
+      });
   }
 );
 

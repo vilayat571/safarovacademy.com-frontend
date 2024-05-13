@@ -6,6 +6,7 @@ import fetchAllblogs from "./reducers/fetchAllblogs";
 import fetchAllcategories from "./fetchAllcategories";
 import introBlogsSlice from "./reducers/introBlogsSlice";
 import askQuestion from "./reducers/askQuestion";
+import allBlogs from "./reducers/allBlogs";
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +15,8 @@ export const store = configureStore({
     fetchAllblogs:fetchAllblogs,
     fetchAllcategories:fetchAllcategories,
     introBlogsSlice:introBlogsSlice,
-    askQuestion:askQuestion
+    askQuestion:askQuestion,
+    allBlogs:allBlogs
   },
 });
 

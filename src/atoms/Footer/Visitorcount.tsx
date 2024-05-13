@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
+
+// must edit
 function Counter() {
   const [count, setCount] = useState(0);
 
   const storedCount = localStorage.getItem("pageVisits");
-  
+
   useEffect(() => {
  
     const initialCount: any = storedCount ? Number(storedCount) : 0;
