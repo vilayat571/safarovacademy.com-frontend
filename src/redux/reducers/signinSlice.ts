@@ -1,10 +1,10 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Form } from "../../pages/Signin/Signin";
 
 export interface InitialState {
   data: any;
   loading: boolean;
-  error: string | null;
+  error: any;
 }
 
 const initialState: InitialState = {
@@ -17,7 +17,8 @@ export const submitSigninForm = createAsyncThunk(
   "/sendForm",
   async (form: Form) => {
     const url = "https://api.safarovacademy.com/api/v1/account/login/";
-    fetch(url, {
+
+   const response:any= await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -29,7 +30,7 @@ export const submitSigninForm = createAsyncThunk(
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        
         localStorage.setItem(
           "signIn",
           JSON.stringify({
@@ -40,6 +41,9 @@ export const submitSigninForm = createAsyncThunk(
           })
         );
       });
+
+      return response;
+
   }
 );
 
@@ -49,8 +53,18 @@ const signinSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(submitSigninForm.pending, (state: InitialState) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(submitSigninForm.fulfilled, (state: InitialState,action:PayloadAction) => {
       state.loading = false;
       state.error = null;
+      state.data=action.payload
+    });
+    builder.addCase(submitSigninForm.rejected, (state: InitialState,action:PayloadAction) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.data=null;
     });
   },
 });

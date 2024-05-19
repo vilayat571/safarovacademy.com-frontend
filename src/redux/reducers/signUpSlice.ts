@@ -7,6 +7,11 @@ interface InitialState {
   error: any;
 }
 
+export interface IData {
+  form: FormSignup;
+  setRes: any;
+}
+
 const initialState: InitialState = {
   data: "",
   loading: false,
@@ -15,30 +20,26 @@ const initialState: InitialState = {
 
 export const signUpform = createAsyncThunk(
   "/sendSignup",
-  async (form: FormSignup) => {
+  async ({ form, setRes }: IData) => {
     const url = "https://api.safarovacademy.com/api/v1/account/register/";
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          email: form.email,
-          username: form.username,
-          password: form.password,
-        }),
-      });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        email: form.email,
+        username: form.username,
+        password: form.password,
+      }),
+    });
 
-      const json = await response.json();
-      if (!response.ok) {
-        return json
-        
-    }
-    } catch (error) {
-      console.log(error);
-    }
+  
+
+    return response.status;
   }
+
+ 
 );
 
 const signUpSlice = createSlice({
@@ -46,11 +47,20 @@ const signUpSlice = createSlice({
   reducers: {},
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(signUpform.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
     builder.addCase(signUpform.fulfilled, (state, action: PayloadAction) => {
       state.loading = false;
-      state.error = action.payload;
-      
-    });
+      state.error = null
+      state.data=action.payload
+    })
+    builder.addCase(signUpform.rejected, (state, ) => {
+      state.loading = false;
+      state.error = null;
+      state.data=null
+    })
   },
 });
 

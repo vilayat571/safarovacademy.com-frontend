@@ -36,6 +36,14 @@ function Signin() {
 
   const [text, setText] = useState(true);
 
+  const [msg, setMsg] = useState<string>("");
+  
+  if(msg.length>0){
+    setTimeout(() => {
+      setMsg('')
+    }, 2000);
+  }
+
   const loadingPart = (
     <div className="bg-[#000] w-full h-screen flex justify-center items-center">
       {text ? (
@@ -52,6 +60,11 @@ function Signin() {
 
   const realPart = (
     <div className="grid  w-full h-screen">
+      {msg.length > 0 && (
+        <span className="absolute bottom-12 right-10 bg-red-700 px-2 py-1 rounded text text-white">
+          {msg}
+        </span>
+      )}
       <div className=" text-center flex justify-center  items-center text-black">
         <div className=" relative top-14">
           <p className="">
@@ -59,8 +72,13 @@ function Signin() {
               You're welcome!
             </span>
           </p>
-          <form className="mt-4  " onSubmit={(e) => stopRender(e)}>
+          <form
+            autoComplete="off"
+            className="mt-4  "
+            onSubmit={(e) => stopRender(e)}
+          >
             <input
+              required={true}
               type="text"
               id="email"
               placeholder="E-mail"
@@ -70,6 +88,7 @@ function Signin() {
             />
 
             <input
+              required={true}
               type="text"
               id="password"
               placeholder="Password"
@@ -83,38 +102,68 @@ function Signin() {
             </button>
           </form>
           <div className="text-base text-center mt-6">
-            <span className="text-[#c3c3c3]">
+     <p>
+     <span className="text-[#c3c3c3]">
               Did you not have any account ?.
             </span>
+           
+     </p>
 
-            <p className="mt-[6px]">
+            <p className="mt-[6px] ">
               <Link to="/signup" className="text-base text-white font-medium">
                 Create an account
               </Link>
               <FontAwesomeIcon
-                className="-rotate-45 ml-2 text-base"
+                className="-rotate-45 ml-1 mr-3 text-base"
                 icon={faArrowRight}
               />
+or
+               <Link className="ml-3" to="/">
+              Cancel
+            </Link>
             </p>
           </div>
         </div>
       </div>
-
     </div>
   );
 
   const stopRender: StopRender = (e) => {
     e.preventDefault();
-    dispatch(submitSigninForm(form));
-    setLoading(true);
 
-    setTimeout(() => {
-      setText(false);
-    }, 2000);
+    if (
+      form.email.length > 7 &&
+      form.password.length > 7 &&
+      form.email.includes("@") &&
+      form.email.includes(".com")
+    ) {
+      dispatch(submitSigninForm(form)).then((res) => {
+        if (res.meta.requestStatus == "rejected") {
+          setMsg("Pasword or email are incorrect");
+        } else {
+          setForm({
+            email: "",
+            password: "",
+          });
+         setTimeout(() => {
+          setLoading(true);
+         }, 500);
+          setTimeout(() => {
+            setText(false);
+          }, 1500);
 
-    setTimeout(() => {
-      navigate("/");
-    }, 3000);
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        }
+      });
+    } else if (form.email.length <= 7) {
+      setMsg("Email have to minimum 8 symbols");
+    } else if (form.password.length <= 7) {
+      setMsg("password have to minimum 8 symbols");
+    } else if (!form.email.includes("@") || !form.email.includes(".com")) {
+      setMsg("email have to contain @ and .com symbols");
+    }
   };
 
   return <>{loading ? loadingPart : realPart}</>;

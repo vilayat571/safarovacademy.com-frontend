@@ -19,7 +19,6 @@ function Formofasking() {
     setForm({ ...form, [e.target.id]: e.target.value });
   }
 
-  console.log()
 
   function sendData(e:any) {
     e.preventDefault();

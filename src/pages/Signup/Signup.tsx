@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -26,9 +26,11 @@ function Signup() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [text, setText] = useState("");
+
+  const [res, setRes] = useState<any>(false);
 
   function alertMsg(text: string) {
     setText(text);
@@ -36,8 +38,6 @@ function Signup() {
       setText("");
     }, 2000);
   }
-
-   let err = useAppSelector((state) => state.signUpSlice.error);
 
   const StopRender = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,9 +49,19 @@ function Signup() {
       form.email.includes("@") &&
       form.email.includes(".com")
     ) {
-      dispatch(signUpform(form));
-     console.log('Err',err)
-
+      dispatch(signUpform({ form, setRes })).then((result: any) => {
+       
+        if (result.payload!=400) {
+          setForm({
+            email: "",
+            username: "",
+            password: "",
+          });
+          navigate('/signin')
+        } else {
+          alert("there is a user with this username or email adress");
+        }
+      });
     } else if (form.email.length <= 7) {
       alertMsg("Email have to minimum 8 symbols");
     } else if (form.password.length <= 7) {
@@ -65,7 +75,13 @@ function Signup() {
 
   return (
     <div className="grid w-full h-screen">
-      <div className=" absolute top-12 left-12 text-white text-xl font-semibold">
+      <div
+        className={`${
+          text.length > 0
+            ? " absolute bottom-12 right-8 text-white bg-red-700 px-2 py-1 text rounded z-40"
+            : "absolute top-12 invisible"
+        }`}
+      >
         {text}
       </div>
       <div className=" text-center flex justify-center items-center text-black">
@@ -135,3 +151,5 @@ function Signup() {
 }
 
 export default Signup;
+
+

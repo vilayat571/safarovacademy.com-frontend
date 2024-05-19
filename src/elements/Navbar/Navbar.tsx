@@ -16,7 +16,7 @@ export default function Navbar() {
   const object = JSON.parse(data);
 
   const showAlert = () => {
-    !object?.username && alert("Please sign in to see this page 😊 ");
+    !object?.username && alert("Create an account so you can ask me questions");
   };
 
   return (
@@ -40,7 +40,7 @@ export default function Navbar() {
               className={`mx-4 ${
                 object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
               }`}
-              to={`${object?.username ? "/dashboard" : "/askquestion"}`}
+              to={`${object?.username ? "/askquestion" : "/"}`}
             >
               Ask a question
             </Link>
