@@ -58,7 +58,7 @@ function Blogs() {
             value={query}
             onChange={(e) => handleSearch(e)}
             placeholder="Search a blog"
-            className=" bg-[#232323] w-[500px] h-[68px]  px-6 indent-4 
+            className=" bg-[#1F2025] w-[500px] h-[68px]  px-6 indent-4 
            placeholder:text-white tracking-wide text-[17px] rounded-full  outline-none"
           />
         </div>
