@@ -30,7 +30,6 @@ function Signup() {
 
   const [text, setText] = useState("");
 
-
   function alertMsg(text: string) {
     setText(text);
     setTimeout(() => {
@@ -48,17 +47,16 @@ function Signup() {
       form.email.includes("@") &&
       form.email.includes(".com")
     ) {
-      dispatch(signUpform(form )).then((result: any) => {
-       
-        if (result.payload!=400) {
+      dispatch(signUpform(form)).then((result: any) => {
+        if (result.payload != 400) {
           setForm({
             email: "",
             username: "",
             password: "",
           });
-          navigate('/signin')
+          navigate("/signin");
         } else {
-          alert("there is a user with this username or email adress");
+          alertMsg("There is a user with these credentials");
         }
       });
     } else if (form.email.length <= 7) {
@@ -101,7 +99,7 @@ function Signup() {
               id="username"
               placeholder="Username"
               className=" h-13 tracking-wide outline-none
-               rounded-md text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
+               rounded text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
               value={form.username}
               onChange={(e) => handleChange(e)}
             />
@@ -110,7 +108,7 @@ function Signup() {
               type="text"
               id="email"
               placeholder="E-mail"
-              className="  h-13 tracking-wide outline-none rounded-md text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
+              className="  h-13 tracking-wide outline-none rounded text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
               value={form.email}
               onChange={(e) => handleChange(e)}
             />
@@ -120,12 +118,12 @@ function Signup() {
               type="text"
               id="password"
               placeholder="Password"
-              className="  h-13 tracking-wide outline-none rounded-md text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
+              className="  h-13 tracking-wide outline-none rounded text-[#c3c3c3] px-6 text-normal p-4 my-3 w-9/12 bg-[#232323]"
               value={form.password}
               onChange={(e) => handleChange(e)}
             />
             <br />
-            <button className=" w-28 h-10 text-normal tracking-wide text-white mt-3 rounded-md bg-[#232323]">
+            <button className=" w-28 h-10 text-normal tracking-wide text-white mt-3 rounded-sm bg-[#232323]">
               Sign up
             </button>
           </form>
@@ -150,5 +148,3 @@ function Signup() {
 }
 
 export default Signup;
-
-

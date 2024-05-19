@@ -66,7 +66,7 @@ export default function Navbar() {
             }
             arrowStyle={"-rotate-45 mr-2 text-normal text-white font-medium"}
             textLink={object == null ? "Let's join me" : object?.username}
-            pathLink={object == null ? "/signin" : "/dashboard"}
+            pathLink={object == null ? "/signin" : "/askquestion/myquestions"}
           />
 
           <div className=" xl:hidden lg:hidden md:block sm:block">

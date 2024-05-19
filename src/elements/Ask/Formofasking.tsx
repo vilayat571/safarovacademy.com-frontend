@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../redux/store";
 import { sendFormData } from "../../redux/reducers/askQuestion";
+import { useNavigate } from "react-router-dom";
 
 export interface AskInterface {
   title: string;
@@ -13,20 +14,56 @@ function Formofasking() {
     subject: "",
   });
 
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
 
   function changeForm(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.id]: e.target.value });
   }
 
+  const [msg, setMsg] = useState<string>("");
 
-  function sendData(e:any) {
+  if (msg.length > 0) {
+    setTimeout(() => {
+      setMsg("");
+    }, 2000);
+  }
+
+  function sendData(e: any) {
     e.preventDefault();
-    dispatch(sendFormData({ title: form.title, subject: form.subject }));
+    if (form.title.length > 19 && form.subject.length > 49) {
+      dispatch(sendFormData({ title: form.title, subject: form.subject }));
+
+      setTimeout(() => {
+        setMsg("Success!");
+        setForm({
+          title: "",
+          subject: "",
+        });
+      }, 1000);
+
+      setTimeout(() => {
+        navigate("/askquestion/myquestions");
+      }, 2000);
+    } else if (form.title.length < 19) {
+      setMsg("Title of question must consist minimum 20 characters");
+    } else if (form.subject.length < 49) {
+      setMsg("Description of question must consist minimum 50 characters");
+    }
   }
 
   return (
     <div className="w-full grid grid-cols-1 gap-y-4 h-auto xl:mt-28 lg:mt-28 md:mt-28 sm:mt-16">
+      {msg.length > 0 && (
+        <span
+          className={` fixed bottom-12 z-20 right-10 ${
+            msg == "Success!" ? "bg-green-700" : "bg-red-700"
+          }  px-2 py-1 rounded text text-white`}
+        >
+          {msg}
+        </span>
+      )}
       <form action="sendForm">
         {/* Input 1 - we will make a component */}
         <div className="col-span-1">
@@ -40,6 +77,7 @@ function Formofasking() {
           </div>
           <div>
             <input
+              required={true}
               value={form.title}
               onChange={(e) => changeForm(e)}
               id="title"
@@ -62,6 +100,7 @@ function Formofasking() {
           </div>
           <div>
             <input
+              required={true}
               value={form.subject}
               onChange={(e) => changeForm(e)}
               id="subject"
