@@ -24,9 +24,7 @@ function Question() {
     <Adminlayout>
       {loading ? (
         <div className="w-full h-screen text-center flex justify-center items-center">
-          <p className="text-xl mb-1 text-[#cfcfcf]">
-           Data is loading...
-          </p>
+          <p className="text-xl mb-1 text-[#cfcfcf]">Data is loading...</p>
         </div>
       ) : (
         <div className="xl:w-4/5 md:w-full lg:w-4/5 sm:w-full h-screen overflow-auto py-20 px-12">
@@ -54,12 +52,15 @@ function Question() {
               <div className=" grid grid-cols-1 gap-y-10 mt-10 ">
                 {questions?.results.map((item: any) => {
                   return (
-                    <div className=" col-span-1 xl:w-2/3 lg:w-2/3 md:w-full sm:w-full border-b-[1px] pb-2 border-[#cfcfcf]">
+                    <div
+                      className=" overflow-x-hidden  col-span-1 xl:w-2/3 lg:w-2/3 md:w-full sm:w-full 
+                    
+                    border-b-[0.4px] pb-2 border-[#a0a0a0]"
+                    >
                       <p className="font-semibold mb-2 leading-9 text-white tracking-wider text-lg">
                         {item.title}
                       </p>
-                      <p className="font leading-6 text-[#cfcfcf] tracking-wider text-regular">
-                        {" "}
+                      <p className=" text-[#cfcfcf] tracking-wider text-regular">
                         {item.subject}
                       </p>
                     </div>

@@ -1,4 +1,4 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { FormSignup } from "../../pages/Signup/Signup";
 
 interface InitialState {
@@ -47,7 +47,7 @@ const signUpSlice = createSlice({
       state.loading = true;
       state.error = null;
     })
-    builder.addCase(signUpform.fulfilled, (state, action: PayloadAction) => {
+    builder.addCase(signUpform.fulfilled, (state, action) => {
       state.loading = false;
       state.error = null
       state.data=action.payload

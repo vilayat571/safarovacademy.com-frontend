@@ -61,7 +61,7 @@ const signinSlice = createSlice({
       state.error = null;
       state.data=action.payload
     });
-    builder.addCase(submitSigninForm.rejected, (state: InitialState,action:PayloadAction) => {
+    builder.addCase(submitSigninForm.rejected, (state: InitialState,action) => {
       state.loading = false;
       state.error = action.payload;
       state.data=null;
