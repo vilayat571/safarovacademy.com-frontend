@@ -7,10 +7,6 @@ interface InitialState {
   error: any;
 }
 
-export interface IData {
-  form: FormSignup;
-  setRes: any;
-}
 
 const initialState: InitialState = {
   data: "",
@@ -20,7 +16,7 @@ const initialState: InitialState = {
 
 export const signUpform = createAsyncThunk(
   "/sendSignup",
-  async ({ form, setRes }: IData) => {
+  async (form:FormSignup) => {
     const url = "https://api.safarovacademy.com/api/v1/account/register/";
 
     const response = await fetch(url, {

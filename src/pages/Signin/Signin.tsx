@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../redux/store";
 import { submitSigninForm } from "../../redux/reducers/signinSlice";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
 export interface Form {
@@ -37,10 +35,10 @@ function Signin() {
   const [text, setText] = useState(true);
 
   const [msg, setMsg] = useState<string>("");
-  
-  if(msg.length>0){
+
+  if (msg.length > 0) {
     setTimeout(() => {
-      setMsg('')
+      setMsg("");
     }, 2000);
   }
 
@@ -61,7 +59,7 @@ function Signin() {
   const realPart = (
     <div className="grid  w-full h-screen">
       {msg.length > 0 && (
-        <span className="absolute bottom-12 right-10 bg-red-700 px-2 py-1 rounded text text-white">
+        <span className="absolute bottom-12 z-20 right-10 bg-red-700 px-2 py-1 rounded text text-white">
           {msg}
         </span>
       )}
@@ -102,25 +100,20 @@ function Signin() {
             </button>
           </form>
           <div className="text-base text-center mt-6">
-     <p>
-     <span className="text-[#c3c3c3]">
-              Did you not have any account ?.
-            </span>
-           
-     </p>
+            <p>
+              <span className="text-[#c3c3c3]">
+                Did you not have any account ?.
+              </span>
+            </p>
 
-            <p className="mt-[6px] ">
+            <p className="mt-[6px] bordr grid  ">
               <Link to="/signup" className="text-base text-white font-medium">
                 Create an account
               </Link>
-              <FontAwesomeIcon
-                className="-rotate-45 ml-1 mr-3 text-base"
-                icon={faArrowRight}
-              />
-or
-               <Link className="ml-3" to="/">
-              Cancel
-            </Link>
+
+              <Link to="/">
+                <u> Cancel</u>
+              </Link>
             </p>
           </div>
         </div>
@@ -145,9 +138,9 @@ or
             email: "",
             password: "",
           });
-         setTimeout(() => {
-          setLoading(true);
-         }, 500);
+          setTimeout(() => {
+            setLoading(true);
+          }, 500);
           setTimeout(() => {
             setText(false);
           }, 1500);

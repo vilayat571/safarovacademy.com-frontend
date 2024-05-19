@@ -20,7 +20,7 @@ function Question() {
     <Adminlayout>
       <div className="w-4/5 border-2  overflow-auto ">
       {
-        questions?.results?.map((item:any)=>{
+        questions?.results.map((item:any)=>{
           return item.title
         })
       }

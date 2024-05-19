@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { useAppDispatch } from "../../redux/store";
 import { Link, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
@@ -30,7 +30,6 @@ function Signup() {
 
   const [text, setText] = useState("");
 
-  const [res, setRes] = useState<any>(false);
 
   function alertMsg(text: string) {
     setText(text);
@@ -49,7 +48,7 @@ function Signup() {
       form.email.includes("@") &&
       form.email.includes(".com")
     ) {
-      dispatch(signUpform({ form, setRes })).then((result: any) => {
+      dispatch(signUpform(form )).then((result: any) => {
        
         if (result.payload!=400) {
           setForm({

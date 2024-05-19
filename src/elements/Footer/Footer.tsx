@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Arrrow from "../../components/Navbar/Arrrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Counter from "../../atoms/Footer/Visitorcount";
 
 function Footer() {
@@ -49,11 +49,12 @@ function Footer() {
             <Counter />
           </div>
         </div>
+
         <div className="col-span-1 ">
           <div
             className="xl:text-[25px] lg:text-[25px] md:text-[25px] sm:text-xl
              xl:font-semibold md:font-semibold lg:font-semibold sm:font-normal tracking-wide text-white 
-          mt-6  flex justify-center "
+          mt-6  flex justify-start "
           >
             <div
               className="xl:w-3/4 md:w-3/4 lg:w-3/4 sm:w-full tracking-wider
@@ -64,37 +65,37 @@ function Footer() {
               everything? Let’s chat and find out what’s best for you!
             </div>
           </div>
+
           <div
-            className="xl:w-3/4 md:w-3/4 lg:w-3/4 sm:w-full 
-           flex justify-center
+            className="mt-8 
             "
           >
-            <div
-              className="relative xl:left-3 lg:left-3 md:left-3 sm:-left-16
-               xl:flex lg:flex md:flex sm:block mt-8 "
-            >
-              <Link
-                to="/"
-                className="xl:text-xl lg:text-xl md:v sm:text-lg
-             xl:mb-0 md:mb-0 lg:mb-0 sm:mb-2 block"
-              >
-                <Arrrow style="-rotate-45 mr-2 text-lg text-white font-medium" />
+            <p className="mb-2">
+              <Link to="/" className="text-xl">
+                <Arrrow style="-rotate-45 mr-2 text-normal text-white font-medium" />
                 Let's connect
               </Link>
-              <Link
-                to="/"
-                className="text-xlxl:text-xl lg:text-xl md:v sm:text-lg
-             xl:ml-8 md:ml-8 lg:ml-8 sm:ml-0 block"
-              >
+            </p>
+
+            <p className="mb-2">
+              <Link to="/" className="text-xl">
                 <FontAwesomeIcon
                   className="mr-[6px] ml-[2px] text-xl"
                   icon={faLinkedin}
                 />
                 Linkedin
               </Link>
-            </div>
-        
-           
+            </p>
+
+            <p className="mb-2">
+              <Link to="/" className="text-xl">
+                <FontAwesomeIcon
+                  className="mr-[6px] ml-[2px] text-xl"
+                  icon={faGithub}
+                />
+                Github
+              </Link>
+            </p>
           </div>
         </div>
       </div>

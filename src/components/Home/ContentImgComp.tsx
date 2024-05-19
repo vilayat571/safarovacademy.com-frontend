@@ -7,13 +7,13 @@ function ContentImgComp(props: ContentInterface) {
     <div className="col-span-1">
       <p
         className="text-[#ff9634] tracking-wide 
-         mb-5 font-semibold leading-9 text-xl"
+         mb-3 font-semibold leading-9 text-xl"
       >
         {props.header}
       </p>
       <p
-        className="xl:text-[27px] md:text-[27px] lg:text-[27px] sm:text-xl font-semibold
-         text-white xl:mb-4 md:mb-4 lg:mb-8 tracking-wide leading-10 sm:mb-2 "
+        className="text-xl
+         text-white mb-4  tracking-wider "
       >
         {props.description1}
         <br />
@@ -21,8 +21,8 @@ function ContentImgComp(props: ContentInterface) {
       </p>
       <div className="flex justify-start items-center">
         <p
-          className="xl:w-10/12 lg:w-10/12 md:w-10/12 sm:w-[95%] tracking-wide leading-9
-          xl:text-[20px] lg:text-[22px] md:text-[20px] sm:text-lg font-normal  text-[#c3c3c3]"
+          className="xl:w-10/12 lg:w-10/12 md:w-10/12 sm:w-[95%] tracking-wide leading-8
+          text-lg font-normal  text-[#c3c3c3]"
         >
           {props.body}
         </p>

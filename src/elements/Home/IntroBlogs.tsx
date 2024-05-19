@@ -41,7 +41,7 @@ function IntroBlogs() {
             <Link
               key={item.id}
               to={`/blogs/${item.id}`}
-              className="col-span-2  flex justify-center "
+              className="col-span-2 flex xl:justify-center lg:justify-center md:justify-start sm:justify-start "
             >
               <div>
                 <img
@@ -49,7 +49,7 @@ function IntroBlogs() {
                   src={item.image}
                   alt=""
                 />
-                <p className=" text-[#c3c3c3] text-normal font-medium mt-4">
+                <p className=" text-[#c3c3c3] text-normal font-medium mt-4 line-clamp-1">
                   {item.description}
                 </p>
                 <p className=" tracking-wide leading-10 text-[#fff] font-semibold text-lg mt-2">

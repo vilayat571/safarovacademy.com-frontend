@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -19,6 +19,17 @@ export default function Navbar() {
     !object?.username && alert("Create an account so you can ask me questions");
   };
 
+  const navigate = useNavigate();
+
+  const path = useLocation();
+  const onRefresh = () => {
+    if ((path.pathname = "/")) {
+      navigate("/");
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div>
       <div className=" flex justify-center align-middle tracking-wide">
@@ -32,7 +43,7 @@ export default function Navbar() {
             className="flex xl:block lg:block md:hidden sm:hidden text-normal
            tracking-wide text-[#C3C3C3] justify-between "
           >
-            <Link className="mx-4" to="/blogs">
+            <Link className="mx-4 mb-2" to="/blogs">
               Blogs
             </Link>
             <Link
@@ -44,7 +55,7 @@ export default function Navbar() {
             >
               Ask a question
             </Link>
-            <Link className="mx-4" to="/">
+            <Link className="mx-4 mb-2" to="/">
               Who I'am
             </Link>
           </div>
@@ -94,15 +105,30 @@ export default function Navbar() {
             </button>
           </div>
           <div className="grid grid-cols-1 mx-5 text-xl">
-            <Link className="mx-4" to="/blogs">
+            <Link className="mx-4 mb-2" to="/blogs">
               Blogs
             </Link>
-            <Link className="mx-4" to="/askquestion">
+            <Link
+              onClick={showAlert}
+              className={`mx-4 mb-2 ${
+                object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
+              }`}
+              to={`${object?.username ? "/askquestion" : "/"}`}
+            >
               Ask a question
             </Link>
-            <Link className="mx-4" to="/">
+            <Link className="mx-4 mb-2" onClick={onRefresh} to="/">
               Who I'am
             </Link>
+
+            <Sendlink
+              divStyle={
+                "xl:hidden lg:hidden md:block sm:block mx-4  text-normal leading-9 tracking-wide"
+              }
+              arrowStyle={"-rotate-45 mr-1 text-normal text-white font-medium"}
+              textLink={object == null ? "Let's join me" : object?.username}
+              pathLink={object == null ? "/signin" : "/dashboard"}
+            />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ function ContentImg() {
     header: "Ask a question",
     description1: `I am blogging`,
     description2: "based on my experience",
-    body: " But I'm also improving my skills by answering questions. So I think that if someone is helping someone else, it's an investment in  themselves. Let us know if you have any questions",
+    body: "But I'm also improving my skills by answering questions. So I think that if someone is helping someone else, it's an investment in  themselves. Let us know if you have any questions",
     link: " Let's ask",
     path: "/",
   };
