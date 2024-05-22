@@ -2,21 +2,19 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import signinSlice from "./reducers/signinSlice";
 import signUpSlice from "./reducers/signUpSlice";
-import fetchAllblogs from "./reducers/fetchAllblogs";
 import fetchAllcategories from "./fetchAllcategories";
 import introBlogsSlice from "./reducers/introBlogsSlice";
 import askQuestion from "./reducers/askQuestion";
-import allBlogs from "./reducers/allBlogs";
+import fetchBlogs from "./reducers/fetchBlogs";
 
 export const store = configureStore({
   reducer: {
     signinSlice: signinSlice,
-    signUpSlice:signUpSlice,
-    fetchAllblogs:fetchAllblogs,
-    fetchAllcategories:fetchAllcategories,
-    introBlogsSlice:introBlogsSlice,
-    askQuestion:askQuestion,
-    allBlogs:allBlogs
+    signUpSlice: signUpSlice,
+    fetchAllcategories: fetchAllcategories,
+    introBlogsSlice: introBlogsSlice,
+    askQuestion: askQuestion,
+    blogsStoreReducer: fetchBlogs
   },
 });
 

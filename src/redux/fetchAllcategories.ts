@@ -38,4 +38,4 @@ const fetchAllcategories = createSlice({
 
 export default fetchAllcategories.reducer;
 
-// heftede bir defe - nene-baba-dayilar-bibiler ile danismaq
+
