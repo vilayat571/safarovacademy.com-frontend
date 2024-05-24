@@ -7,6 +7,7 @@ import Offer from "../../elements/Home/Offer";
 import Layout from "../../layout/layout";
 
 function App() {
+  
   return (
     <Layout>
       <Homebegin />

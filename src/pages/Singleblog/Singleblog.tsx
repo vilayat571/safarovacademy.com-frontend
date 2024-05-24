@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {url} from '../../atoms/Signin/Gif'
 import DetailsBlog from "../../atoms/Signin/DetailsBlog";
 import { calculateReadingTime } from "../../atoms/Signin/timeCalculater";
+import Author from "../../atoms/Singleblog/Author";
 export interface IBlog {
   author: number | string;
   body: string;
@@ -71,6 +72,9 @@ function Singleblog() {
               className="relative xl:left-10 lg:left-10 md:left-10 sm:left-0 mt-12 rounded-lg overflow-hidden"
               dangerouslySetInnerHTML={{ __html: blog.body }}
             ></div>
+
+            <hr className="mb-8 mt-20 mx-10" />
+            <Author />
           </div>
         </Layout>
       ) : (

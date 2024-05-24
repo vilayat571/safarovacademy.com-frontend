@@ -1,21 +1,35 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-type TInterface = {
+export type TInitialstate = {
   data: any;
   loading: boolean;
   error: any;
 };
 
-export const getBlogs = createAsyncThunk("/getBlogs", async () => {
-  const url = "https://api.safarovacademy.com/api/v1/blog/";
+interface IHoleData {
+  setData: any;
+  category?: number;
+}
 
-  const res = await fetch(url);
-  const blogs = await res.json();
-  return blogs;
+export const getBlogs = createAsyncThunk(
+  "/getBlogs",
+  async (holeData: IHoleData) => {
 
-});
 
-const initialState: TInterface = {
+    //console.log('Category',holeData.category,`https://api.safarovacademy.com/api/v1/blog/categories/${holeData.category}`);
+
+    fetch(
+      holeData.category==10  ? `https://api.safarovacademy.com/api/v1/blog` :
+        `https://api.safarovacademy.com/api/v1/blog/?t&category=${holeData.category}`
+        
+    )
+      .then((res) => res.json())
+      .then((data) => holeData.setData(data.results));
+  }
+  
+);
+
+const initialState: TInitialstate = {
   data: "",
   loading: false,
   error: null,
@@ -25,8 +39,23 @@ const blogsStoreReducer = createSlice({
   name: "blogsStoreReducer",
   initialState,
   reducers: {},
-  extraReducers: () => {},
+  extraReducers: (builder) => {
+    builder.addCase(getBlogs.pending, (state) => {
+      state.data = null;
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(getBlogs.fulfilled, (state, action) => {
+      state.data = action.payload;
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(getBlogs.rejected, (state, action) => {
+      state.data = null;
+      state.loading = true;
+      state.error = action.payload;
+    });
+  },
 });
-
 
 export default blogsStoreReducer.reducer;

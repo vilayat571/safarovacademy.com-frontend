@@ -10,10 +10,16 @@ function Layout(props: any) {
 
   const location = useLocation();
 
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    !object?.username  && location.pathname == "/askquestion" && navigate("/")
+    !object?.username && location.pathname == "/askquestion" && navigate("/");
+
+    document.onkeydown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key == "I") {
+        e.preventDefault();
+      }
+    };
   });
 
   return (
