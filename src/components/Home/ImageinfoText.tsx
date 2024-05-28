@@ -1,4 +1,4 @@
-import myImg from "../../assets/images/profile.jpeg";
+import myImg from "../../assets/images/vilayat_safarov_profile.jpeg";
 
 function ImageinfoText() {
   return (
