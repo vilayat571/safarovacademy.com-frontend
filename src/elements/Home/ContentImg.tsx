@@ -1,4 +1,4 @@
-import imagethird from "../../assets/images/imagethird.png";
+import globus from "../../assets/images/globus.png";
 import ContentImgComp from "../../components/Home/ContentImgComp";
 
 export interface ContentInterface {
@@ -33,7 +33,7 @@ function ContentImg() {
 
       <div className="col-span-1 flex justify-end xl:mt-0 lg:mt-0 md:mt-0 sm:mt-32 ">
         <img
-          src={imagethird}
+          src={globus}
           className="w-[418px] xl:h-[358px] lg:h-[358px] md:h-[358px] sm:h-[300px] object-cover	"
           alt=""
         />

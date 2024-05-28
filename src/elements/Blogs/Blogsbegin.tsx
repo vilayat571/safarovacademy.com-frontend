@@ -1,4 +1,4 @@
-import image3 from "../../assets/images/imagethird.png";
+import globus from "../../assets/images/globus.png";
 
 function Blogsbegin() {
   return (
@@ -27,7 +27,7 @@ function Blogsbegin() {
         className="h-auto col-span-2 xl:mt-0 lg:mt-0 md:mt-0 sm:mt-16
        flex xl:justify-end lg:justify-end md:justify-start sm:justify-start "
       >
-        <img className="object-cover h-[380px]" src={image3} alt="" />
+        <img className="object-cover h-[380px]" src={globus} alt="" />
       </div>
     </div>
   );

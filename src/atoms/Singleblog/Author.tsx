@@ -1,4 +1,4 @@
-import profile from "../../assets/images/profile.jpeg";
+import profile from "../../assets/images/vilayat_safarov_profile.jpeg";
 
 function Author() {
   return (

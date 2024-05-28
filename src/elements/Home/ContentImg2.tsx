@@ -1,4 +1,4 @@
-import imagefifth from "../../assets/images/imagefifth.png";
+import imagefifth from "../../assets/images/rotate.png";
 import ContentImgComp from "../../components/Home/ContentImgComp";
 import { ContentInterface } from "./ContentImg";
 
