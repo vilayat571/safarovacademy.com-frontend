@@ -1,10 +1,14 @@
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import Footer from "../elements/Footer/Footer";
 import Mainlay from "../elements/Layout/Mainlay";
 import Navbar from "../elements/Navbar/Navbar";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function Layout(props: any) {
+type IProps = {
+  children: ReactNode;
+};
+
+const Layout: React.FC<IProps> = (props) => {
   const data: any = localStorage.getItem("signIn");
   const object = JSON.parse(data);
 
@@ -29,6 +33,6 @@ function Layout(props: any) {
       <Footer />
     </div>
   );
-}
+};
 
 export default Layout;

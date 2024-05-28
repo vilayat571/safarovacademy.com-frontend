@@ -6,6 +6,7 @@ import waving from '../../assets/images/wawing.png'
 function HomebeginText() {
   return (
     <div className="col-span-2 h-[400px]">
+      
       <p className="text-[29px] relative top-3 ml-1 tracking-wider font-thin mb-4 ">
         Hi there <img src={waving} className="w-8 inline" alt="" /> I am
       </p>
@@ -29,6 +30,7 @@ function HomebeginText() {
           <Arrrow style={"-rotate-45 ml-[2px] mt-[3px] text-base "} />
         </Link>
       </div>
+
     </div>
   );
 }

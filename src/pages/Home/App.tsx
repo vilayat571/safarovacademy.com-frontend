@@ -6,10 +6,13 @@ import IntroBlogs from "../../elements/Home/IntroBlogs";
 import Offer from "../../elements/Home/Offer";
 import Layout from "../../layout/layout";
 
-function App() {
-  
+const App: React.FC<{}> = () => {
+
+
+
   return (
     <Layout>
+    
       <Homebegin />
       <Imageinfo />
       <Offer />
@@ -18,6 +21,6 @@ function App() {
       <IntroBlogs />
     </Layout>
   );
-}
+};
 
 export default App;
