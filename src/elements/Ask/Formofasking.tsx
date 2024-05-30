@@ -65,7 +65,7 @@ function Formofasking() {
         </span>
       )}
       <form action="sendForm">
-        {/* Input 1 - we will make a component */}
+
         <div className="col-span-1">
           <div>
             <p className="text-[22px]  mb-4 tracking-wider"> Title</p>

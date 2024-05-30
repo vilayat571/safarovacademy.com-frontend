@@ -4,12 +4,15 @@ interface Props {
   compData: OfferContentComp[];
 }
 
-function OffercontentComp(props: Props) {
+const OffercontentComp: React.FC<Props> = (props) => {
   return (
     <>
       {props.compData.map((item: OfferContentComp) => {
         return (
-          <div key={item.src} className="col-span-2 text-white bg-[#171719] rounded-2xl p-12  ">
+          <div
+            key={item.src}
+            className="col-span-2 text-white bg-[#171719] rounded-2xl p-12  "
+          >
             <div className="flex items-center justify-center    ">
               <img className="object-cover  mb-4" src={item.src} alt="" />
             </div>
@@ -33,6 +36,6 @@ function OffercontentComp(props: Props) {
       })}
     </>
   );
-}
+};
 
 export default OffercontentComp;

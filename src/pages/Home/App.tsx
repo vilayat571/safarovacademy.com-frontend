@@ -7,12 +7,8 @@ import Offer from "../../elements/Home/Offer";
 import Layout from "../../layout/layout";
 
 const App: React.FC<{}> = () => {
-
-
-
   return (
     <Layout>
-    
       <Homebegin />
       <Imageinfo />
       <Offer />
