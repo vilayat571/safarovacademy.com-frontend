@@ -21,13 +21,11 @@ function Question() {
     }, 500);
   }, []);
 
+  console.log("g");
+
   return (
     <Adminlayout>
-      {loading ? (
-        <Loading />
-      ) : (
-      <Isdata questions={questions} />
-      )}
+      {loading ? <Loading /> : <Isdata questions={questions} />}
     </Adminlayout>
   );
 }

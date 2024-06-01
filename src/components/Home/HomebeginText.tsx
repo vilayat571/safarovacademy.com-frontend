@@ -25,7 +25,7 @@ function HomebeginText() {
           to={myCV}
         
           target="blank"
-          className="relative top-5 px-8 py-3 rounded-md text-base border-[1px] border-white "
+          className="relative top-5 px-8 py-3 rounded-[4px] text-base border-[1px] border-white "
         >
           Check out my CV
           <Arrrow style={"-rotate-45 ml-[2px] mt-[3px] text-base "} />

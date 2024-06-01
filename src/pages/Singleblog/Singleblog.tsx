@@ -3,7 +3,7 @@ import Layout from "../../layout/layout";
 import { Link, useParams } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {url} from '../../atoms/Signin/Gif'
+import { url } from "../../atoms/Signin/Gif";
 import DetailsBlog from "../../atoms/Signin/DetailsBlog";
 import { calculateReadingTime } from "../../atoms/Signin/timeCalculater";
 import Author from "../../atoms/Singleblog/Author";
@@ -14,7 +14,7 @@ export interface IBlog {
   id: number;
   image: string;
   title: string;
-  created_date:string
+  created_date: string;
 }
 
 function Singleblog() {
@@ -30,10 +30,6 @@ function Singleblog() {
       .then((data) => setBlog(data));
   }, [blogName]);
 
-  console.log(blog);
-
-
- 
   return (
     <>
       {blog !== null ? (
@@ -57,7 +53,10 @@ function Singleblog() {
                   {blog.title}
                 </span>
                 <span className="block text-xl text-[##c3c3c3] tracking-wider leading-9 mt-2">
-                  <DetailsBlog contentTime={calculateReadingTime(blog.body)} contentDate={blog.created_date} />
+                  <DetailsBlog
+                    contentTime={calculateReadingTime(blog.body)}
+                    contentDate={blog.created_date}
+                  />
                 </span>
               </div>
             </div>
@@ -68,6 +67,17 @@ function Singleblog() {
                 className="w-[975px] rounded-lg mt-16 h-[600px] object-cover"
               />
             </div>
+            <div className="flex justify-center items-center">
+              {blog !== null && blog.description.includes("https") && (
+                <iframe
+                  className="w-[975px] rounded-lg mt-16 h-[600px] object-cover"
+                  src={blog.description}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  title={blog.title}
+                ></iframe>
+              )}
+            </div>
+
             <div
               className="relative xl:left-10 lg:left-10 md:left-10 sm:left-0 mt-12 rounded-lg overflow-hidden"
               dangerouslySetInnerHTML={{ __html: blog.body }}
@@ -87,3 +97,5 @@ function Singleblog() {
 }
 
 export default Singleblog;
+
+

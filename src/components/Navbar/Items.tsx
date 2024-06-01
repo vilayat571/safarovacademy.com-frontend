@@ -13,11 +13,11 @@ function Items() {
     },
     {
       to: "/askquestion",
-      name: "Blogs",
+      name: "Ask question",
     },
     {
       to: "/",
-      name: "   Who I'am",
+      name: "Who I'am",
     },
   ];
 
