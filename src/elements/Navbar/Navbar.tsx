@@ -22,6 +22,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const path = useLocation();
+  
   const onRefresh = () => {
     if ((path.pathname = "/")) {
       navigate("/");
@@ -37,7 +38,7 @@ export default function Navbar() {
           className="xl:w-[85%] lg:w-[85%] md:w-[85%] sm:w-[91%] rounded-full bg-[#1F2025]
          xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-14 md:px-12 sm:px-8 py-4 flex justify-between items-center"
         >
-          <Logo font="text-[27px]" />
+          <Logo  font="text-[27px]" />
 
           <div
             className="flex xl:block lg:block md:hidden sm:hidden text-normal
@@ -78,6 +79,12 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+
+
+
+
+
       <div
         className={`*: ${
           sideOpen
@@ -132,6 +139,9 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+
+
     </div>
   );
 }

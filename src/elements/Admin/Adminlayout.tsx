@@ -9,6 +9,9 @@
 // bezi butonlar calismir
 // responsivliye diqqet et
 // login olan user yeniden sign in ve sign up sehifesini göre bilmesin
+// image does not come case
+// iframe üzərinə çalışmaq 
+// Saytdakı texleri control etmək
 
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../atoms/Navbar/Logo";
