@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../redux/store";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
 
 export interface FormSignup {
@@ -18,6 +18,21 @@ function Signup() {
     email: "",
     username: "",
     password: "",
+  });
+
+  const data: any = localStorage.getItem("signIn");
+  const object = JSON.parse(data);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    object?.username && location.pathname == "/signup" && navigate("/");
+    window.scrollTo(0, 0);
+    document.onkeydown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key == "I") {
+        e.preventDefault();
+      }
+    };
   });
 
   const dispatch = useAppDispatch();

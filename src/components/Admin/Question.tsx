@@ -21,7 +21,6 @@ function Question() {
     }, 500);
   }, []);
 
-  console.log("g");
 
   return (
     <Adminlayout>

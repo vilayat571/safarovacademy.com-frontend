@@ -5,6 +5,9 @@ import Counter from "../../atoms/Footer/Visitorcount";
 import IconP from "./IconP";
 
 function Footer() {
+  const data: any = localStorage.getItem("signIn");
+  const object = JSON.parse(data);
+
   return (
     <div className="mt-32 mb-0 flex justify-center items-center  ">
       <div
@@ -25,10 +28,24 @@ function Footer() {
               Blogs
             </Link>
 
-            <Link className="mb-3 block" to="/signin">
+            <Link
+              className="mb-3 block"
+              onClick={(e) => {
+                e.preventDefault();
+                object?.username && alert("You already signed in");
+              }}
+              to="/signin"
+            >
               Sign in
             </Link>
-            <Link className="mb-3 block" to="/signup">
+            <Link
+              className="mb-3 block"
+              onClick={(e) => {
+                e.preventDefault();
+                object?.username && alert("You already signed up");
+              }}
+              to="/signup"
+            >
               Sign up
             </Link>
             <Link className="mb-3 block" to="/">

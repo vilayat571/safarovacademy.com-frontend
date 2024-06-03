@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../redux/store";
 import { submitSigninForm } from "../../redux/reducers/signinSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export interface Form {
   email: string;
@@ -30,8 +30,6 @@ function Signin() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const navigate = useNavigate();
-
   const [text, setText] = useState(true);
 
   const [msg, setMsg] = useState<string>("");
@@ -41,6 +39,22 @@ function Signin() {
       setMsg("");
     }, 2000);
   }
+  const data: any = localStorage.getItem("signIn");
+  const object = JSON.parse(data);
+
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    object?.username && location.pathname == "/signin" && navigate("/");
+    window.scrollTo(0, 0);
+    document.onkeydown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key == "I") {
+        e.preventDefault();
+      }
+    };
+  });
 
   const loadingPart = (
     <div className="bg-[#000] w-full h-screen flex justify-center items-center">
