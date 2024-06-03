@@ -8,8 +8,8 @@ function ContentImg2() {
     description1: `    Blogs based on more than`,
     description2: "programming languages",
     body: "And more than 20 categories. Most importantly your career related to JavaScript, TypeScript, React, HTML, CSS and many framework     etc. you can find blogs about",
-    link: " Let's ask",
-    path: "/",
+    link: "Learn more",
+    path: "/blogs",
   };
 
   return (
@@ -18,7 +18,7 @@ function ContentImg2() {
         src={imagefifth}
         className="col-span-1 flex justify-start w-[350px] xl:h-[250px] lg:h-[260px] md:h-[358px] sm:h-[200px]
         object-cover	"
-        alt=""
+        alt={contentComp.body}
       />
 
       <ContentImgComp

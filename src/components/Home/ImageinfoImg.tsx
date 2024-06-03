@@ -8,12 +8,12 @@ function ImageinfoImg() {
       <ImgInfocmp />
 
       <Link
-        to="/"
+        to="/blogs"
         className=" px-6 py-3 relative text-base top-12 
          
       rounded border-[1px] border-white"
       >
-        Learn more
+        Read my blogs
         <Arrrow style="-rotate-45 ml-2 text-base text-white font-medium" />
       </Link>
     </div>

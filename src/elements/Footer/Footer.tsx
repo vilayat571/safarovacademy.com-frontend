@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Arrrow from "../../components/Navbar/Arrrow";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Counter from "../../atoms/Footer/Visitorcount";
+import IconP from "./IconP";
 
 function Footer() {
   return (
@@ -71,31 +71,22 @@ function Footer() {
             "
           >
             <p className="mb-2">
-              <Link to="/" className="text-xl">
+              <Link to="/signin" className="text-xl">
                 <Arrrow style="-rotate-45 mr-2 text-normal text-white font-medium" />
                 Let's connect
               </Link>
             </p>
 
-            <p className="mb-2">
-              <Link to="/" className="text-xl">
-                <FontAwesomeIcon
-                  className="mr-[6px] ml-[2px] text-xl"
-                  icon={faLinkedin}
-                />
-                Linkedin
-              </Link>
-            </p>
-
-            <p className="mb-2">
-              <Link to="/" className="text-xl">
-                <FontAwesomeIcon
-                  className="mr-[6px] ml-[2px] text-xl"
-                  icon={faGithub}
-                />
-                Github
-              </Link>
-            </p>
+            <IconP
+              text="Linkedin"
+              link="https://www.linkedin.com/in/vilayat-safarov-1a3b58249/"
+              icon={faLinkedin}
+            />
+            <IconP
+              text="Github"
+              link="https://github.com/vilayat571"
+              icon={faGithub}
+            />
           </div>
         </div>
       </div>

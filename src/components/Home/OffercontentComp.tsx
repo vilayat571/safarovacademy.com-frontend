@@ -14,7 +14,7 @@ const OffercontentComp: React.FC<Props> = (props) => {
             className="col-span-2 text-white bg-[#171719] rounded-2xl p-12  "
           >
             <div className="flex items-center justify-center    ">
-              <img className="object-cover  mb-4" src={item.src} alt="" />
+              <img className="object-cover  mb-4" src={item.src} alt={item.description} />
             </div>
             <p
               className=" xl:text-[19px] lg:text-[19px] md:text-[19px] sm:text-[17px]

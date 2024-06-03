@@ -1,4 +1,3 @@
-// atoms, components hell edildir
 // elements daxilinde adminde qaldim
 // test yazmaq lazimdir
 // yaxsi seo yazmaq lazimdir
@@ -12,6 +11,8 @@
 // image does not come case
 // iframe üzərinə çalışmaq 
 // Saytdakı texleri control etmək
+// logo
+// helmet
 
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../atoms/Navbar/Logo";

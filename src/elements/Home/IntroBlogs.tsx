@@ -47,7 +47,7 @@ function IntroBlogs() {
                 <img
                   className="w-[360px] h-[450px] object-cover rounded-xl"
                   src={item.image}
-                  alt=""
+                  alt={item.title}
                 />
                 <p className=" text-[#c3c3c3] text-normal font-medium mt-4 line-clamp-1">
                   {item.description}

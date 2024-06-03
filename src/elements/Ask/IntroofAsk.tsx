@@ -1,8 +1,6 @@
+import mic from "../../assets/images/mic.png";
+
 function IntroofAsk() {
-
-
-  
-
   return (
     <div
       className="grid xl:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-4  
@@ -30,8 +28,8 @@ function IntroofAsk() {
       <div className="col-span-1 flex xl:justify-end lg:justify-end md:justify-end sm:justify-center">
         <img
           className=" object-contain w-[340px] h-[340px]  "
-          src="https://res.cloudinary.com/kentcdodds-com/image/upload/w_900,q_auto,f_auto/kentcdodds.com/illustrations/mic"
-          alt=""
+          src={mic}
+          alt="Call me anything about programming"
         />
       </div>
     </div>
