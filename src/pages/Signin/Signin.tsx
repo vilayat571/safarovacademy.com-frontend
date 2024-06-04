@@ -79,8 +79,8 @@ function Signin() {
         </span>
       )}
       <div className=" text-center flex justify-center  items-center text-black">
-        <div className=" relative top-14">
-          <p className="">
+        <div className=" relative xl:top-14 lg:top-14 md:top-12 sm:top-10">
+          <p >
             <span className="text-[26px] font-semibold text-white">
               You're welcome!
             </span>

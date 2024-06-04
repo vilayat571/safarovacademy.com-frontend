@@ -33,7 +33,7 @@ function Singleblog() {
     position: "relative",
     width: "100%",
     overflow: "hidden",
-    paddingTop: "56.25%",
+    paddingTop: "56%",
   };
 
   const iframeStyle: React.CSSProperties | undefined = {
@@ -96,7 +96,7 @@ function Singleblog() {
             <div style={divStyle} className="mt-16">
               {blog !== null && blog.description.includes("https") && (
                 <iframe
-                  className="rounded-lg"
+                  className="rounded"
                   style={iframeStyle}
                   src={blog.description}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -113,7 +113,7 @@ function Singleblog() {
               dangerouslySetInnerHTML={{ __html: blog.body }}
             ></div>
 
-            <hr className="mb-8 mt-20 mx-10" />
+            <hr className="mb-8 mt-20 lg:mx-20 md:mx-20 sm:mx-0 xl:mx-20 border-[#c3c3c3]" />
             <Author />
           </div>
         </Layout>

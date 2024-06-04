@@ -52,7 +52,7 @@ export default function Navbar() {
               className={`mx-4 ${
                 object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
               }`}
-              to={`${object?.username ? "/askquestion" : "/"}`}
+              to={`${object?.username ? "/askquestion/myquestions" : "/"}`}
             >
               Ask a question
             </Link>
@@ -120,7 +120,7 @@ export default function Navbar() {
               className={`mx-4 mb-2 ${
                 object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
               }`}
-              to={`${object?.username ? "/askquestion" : "/"}`}
+              to={`${object?.username ? "/askquestion/myquestions" : "/"}`}
             >
               Ask a question
             </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
               }
               arrowStyle={"-rotate-45 mr-1 text-normal text-white font-medium"}
               textLink={object == null ? "Let's join me" : object?.username}
-              pathLink={object == null ? "/signin" : "/dashboard"}
+              pathLink={object == null ? "/signin" : "/askquestion/myquestions"}
             />
           </div>
         </div>

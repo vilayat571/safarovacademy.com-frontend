@@ -1,8 +1,6 @@
-// yaxsi seo yazmaq lazimdir
 // logo lazimdir
 // visible invisible
-// responsivliye diqqet et
-// logo
+
 
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../atoms/Navbar/Logo";
