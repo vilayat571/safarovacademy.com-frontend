@@ -22,13 +22,29 @@ function Singleblog() {
 
   const { blogName } = useParams();
 
-  console.log(blogName);
-
   useEffect(() => {
     fetch(`https://api.safarovacademy.com//api/v1/blog/${blogName}/`)
       .then((response) => response.json())
       .then((data) => setBlog(data));
   }, [blogName]);
+
+  const divStyle: React.CSSProperties | undefined = {
+    position: "relative",
+    width: "100%",
+    overflow: "hidden",
+    paddingTop: "56.25%",
+  };
+
+  const iframeStyle: React.CSSProperties | undefined = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    width: "100%",
+    height: " 100%",
+    border: "none",
+  };
 
   return (
     <>
@@ -61,20 +77,26 @@ function Singleblog() {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <img
-                src={blog.image}
-                alt=""
-                className="w-[975px] rounded-lg mt-16 h-[600px] object-cover"
-              />
+              {blog.category != 9 && (
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-[975px] rounded-lg mt-16 h-[600px] object-cover"
+                />
+              )}
             </div>
-            <div className="flex justify-center items-center">
+            <div style={divStyle} className="mt-16">
               {blog !== null && blog.description.includes("https") && (
                 <iframe
-                  className="w-[975px] rounded-lg mt-16 h-[600px] object-cover"
+                  className="rounded-lg"
+                  style={iframeStyle}
                   src={blog.description}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   title={blog.title}
-                ></iframe>
+                  allowFullScreen={true}
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  frameBorder="0"
+                />
               )}
             </div>
 
@@ -97,5 +119,15 @@ function Singleblog() {
 }
 
 export default Singleblog;
-
-
+{
+  /* <iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/_7xbMKcP3OY?si=6jA46PBLCX0mTd9w"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>; */
+}

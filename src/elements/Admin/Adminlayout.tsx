@@ -1,10 +1,7 @@
-// elements daxilinde adminde qaldim
-// test yazmaq lazimdir
 // yaxsi seo yazmaq lazimdir
 // logo lazimdir
 // visible invisible
 // responsivliye diqqet et
-// image does not come case
 // iframe üzərinə çalışmaq 
 // logo
 // helmet

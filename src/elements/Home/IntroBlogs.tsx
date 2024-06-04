@@ -3,6 +3,8 @@ import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { fetchSomeBlogs } from "../../redux/reducers/introBlogsSlice";
 import { IBlog } from "../../pages/Singleblog/Singleblog";
 import { Link } from "react-router-dom";
+import { calculateReadingTime } from "../../atoms/Signin/timeCalculater";
+import DetailsBlog from "../../atoms/Signin/DetailsBlog";
 
 function IntroBlogs() {
   const blogs = useAppSelector(
@@ -45,14 +47,15 @@ function IntroBlogs() {
             >
               <div>
                 <img
-                  className="w-[360px] h-[450px] object-cover rounded-xl"
+                  className="w-[360px] h-[450px] mb-4 object-cover rounded-xl"
                   src={item.image}
                   alt={item.title}
                 />
-                <p className=" text-[#c3c3c3] text-normal font-medium mt-4 line-clamp-1">
-                  {item.description}
-                </p>
-                <p className=" tracking-wide leading-10 text-[#fff] font-semibold text-lg mt-2">
+                 <DetailsBlog
+                      contentTime={calculateReadingTime(item.body)}
+                      contentDate={item.created_date}
+                    />
+                <p className=" tracking-wide line-clamp-1 text-[#fff] font-semibold text-lg mt-2">
                   {item.title}
                 </p>
               </div>
