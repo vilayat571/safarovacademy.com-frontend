@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../redux/store";
 import { submitSigninForm } from "../../redux/reducers/signinSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import SEO from "../../SEO/SEO";
 
 export interface Form {
   email: string;
@@ -173,7 +174,17 @@ function Signin() {
     }
   };
 
-  return <>{loading ? loadingPart : realPart}</>;
+  return (
+    <>
+      <SEO
+        title="Sign in "
+        description="Sign in to safarovacademy to see updates on a time and to be able to ask a question from Vilayat Safarov"
+        name="’Safarov Academy’"
+        type="infographic"
+      />
+      {loading ? loadingPart : realPart}
+    </>
+  );
 }
 
 export default Signin;

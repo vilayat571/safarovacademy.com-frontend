@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.tsx";
 import Admin from "./pages/Admin/Admin.tsx";
 import Question from "./components/Admin/Question.tsx";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -50,10 +51,15 @@ const router = createBrowserRouter([
   },
 ]);
 
+const helmetContext = {};
+
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <HelmetProvider context={helmetContext} >
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </HelmetProvider>
   </React.StrictMode>
 );

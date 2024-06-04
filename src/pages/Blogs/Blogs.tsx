@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 import DetailsBlog from "../../atoms/Signin/DetailsBlog";
 import { calculateReadingTime } from "../../atoms/Signin/timeCalculater";
+import SEO from "../../SEO/SEO";
 
 interface ICategory {
   category_name: string;
@@ -48,6 +49,12 @@ function Blogs() {
 
   return (
     <Layout>
+      <SEO
+        title="Blogs"
+        description="Learn new things and improve your skills with great articles.  Find the latest of my writing here. The more your read the more you learn 👌"
+        name="’Safarov Academy’"
+        type="article"
+      />
       <div>
         <Blogsbegin />
 

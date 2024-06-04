@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch } from "../../redux/store";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signUpform } from "../../redux/reducers/signUpSlice";
+import SEO from "../../SEO/SEO";
 
 export interface FormSignup {
   email: string;
@@ -86,6 +87,13 @@ function Signup() {
   };
 
   return (
+    <React.Fragment>
+      <SEO
+    title="Sign up"
+    description="Sign up to safarovacademy to see updates on a time and to be able to ask a question from Vilayat Safarov"
+    name="’Safarov Academy’"
+    type="infographic"
+  />
     <div className="grid w-full h-screen">
       <div
         className={`${
@@ -156,9 +164,11 @@ function Signup() {
               </Link>
             </p>
           </div>
+    
         </div>
       </div>
     </div>
+    </React.Fragment>
   );
 }
 

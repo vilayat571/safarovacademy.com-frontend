@@ -7,6 +7,7 @@ import { url } from "../../atoms/Signin/Gif";
 import DetailsBlog from "../../atoms/Signin/DetailsBlog";
 import { calculateReadingTime } from "../../atoms/Signin/timeCalculater";
 import Author from "../../atoms/Singleblog/Author";
+import SEO from "../../SEO/SEO";
 export interface IBlog {
   author: number | string;
   body: string;
@@ -48,8 +49,15 @@ function Singleblog() {
 
   return (
     <>
+    
       {blog !== null ? (
         <Layout>
+               <SEO
+        title={blog.title.slice(0,20)}
+        description={blog.body.slice(0,200)}
+        name="’Safarov Academy’"
+        type="blog"
+      />
           <div className=" grid grid-cols-1 relative top-16">
             <div className="">
               <div className="relative xl:left-20 lg:left-20 md:left-20 sm:left-0">
