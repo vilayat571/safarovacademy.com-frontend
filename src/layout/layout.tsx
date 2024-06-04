@@ -19,11 +19,12 @@ const Layout: React.FC<IProps> = (props) => {
   useEffect(() => {
     !object?.username && location.pathname == "/askquestion" && navigate("/");
     window.scrollTo(0, 0);
-    // document.onkeydown = (e) => {
-    //   if (e.ctrlKey && e.shiftKey && e.key == "I") {
-    //     e.preventDefault();
-    //   }
-    // };
+    console.clear();
+    document.onkeydown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key == "I") {
+        e.preventDefault();
+      }
+    };
   });
 
   return (
