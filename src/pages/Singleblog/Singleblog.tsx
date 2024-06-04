@@ -66,7 +66,7 @@ function Singleblog() {
                     to="/blogs"
                     className="text-lg text-[#c3c3c3] font-light tracking-wide leading-9"
                   >
-                    Back to overview{" "}
+                    Back to overview
                     <FontAwesomeIcon
                       className={"-rotate-45"}
                       icon={faArrowRight}

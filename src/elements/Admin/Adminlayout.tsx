@@ -1,7 +1,3 @@
-// logo lazimdir
-// visible invisible
-
-
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../atoms/Navbar/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

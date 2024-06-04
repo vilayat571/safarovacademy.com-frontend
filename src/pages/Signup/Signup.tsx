@@ -38,6 +38,8 @@ function Signup() {
 
   const dispatch = useAppDispatch();
 
+  const [type, setType] = useState("password");
+
   const handleChange: HandleChangeSignup = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
@@ -138,13 +140,23 @@ function Signup() {
 
               <input
                 required={true}
-                type="text"
+                type={type}
                 id="password"
                 placeholder="Password"
                 className="  h-13 tracking-wide outline-none rounded text-[#c3c3c3] px-6 text-normal p-4 my-3 xl:w-9/12 lg:w-9/12 sm:w-11/12 md:w-10/12 bg-[#232323]"
                 value={form.password}
                 onChange={(e) => handleChange(e)}
               />
+
+              <p className=" xl:mx-20 lg:mx-20 md:mx-20 sm:mx-0 text-left text-sm mt-2 pl-6">
+                <input
+                  type="checkbox"
+                  onClick={() => setType(text)}
+                  className="w-15 mr-1 relative top-[2px]"
+                />
+                <span className="text-[#c3c3c3]"> Show Password </span>
+              </p>
+
               <br />
               <button className=" w-28 h-10 text-normal tracking-wide text-white mt-3 rounded-sm bg-[#232323]">
                 Sign up

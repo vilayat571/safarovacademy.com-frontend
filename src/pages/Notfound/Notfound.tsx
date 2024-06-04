@@ -28,7 +28,7 @@ function Notfound() {
               className="-rotate-45 mr-2 text-base"
               icon={faArrowRight}
             />
-            <Link to="/">Go back to overview</Link>
+            <Link to="/">Back to overview</Link>
           </p>
         </div>
       </div>

@@ -57,6 +57,8 @@ function Signin() {
     };
   });
 
+  const [type, setType] = useState<string>("password");
+
   const loadingPart = (
     <div className="bg-[#000] w-full h-screen flex justify-center items-center">
       {text ? (
@@ -80,7 +82,7 @@ function Signin() {
       )}
       <div className=" text-center flex justify-center  items-center text-black">
         <div className=" relative xl:top-14 lg:top-14 md:top-12 sm:top-10">
-          <p >
+          <p>
             <span className="text-[26px] font-semibold text-white">
               You're welcome!
             </span>
@@ -102,13 +104,22 @@ function Signin() {
 
             <input
               required={true}
-              type="text"
+              type={type}
               id="password"
               placeholder="Password"
               className=" h-13 outline-none rounded text-[#c3c3c3] px-6 text-base p-4 my-2 w-11/12 bg-[#232323]"
               value={form.password}
               onChange={(e) => handleChange(e)}
             />
+
+            <p className="text-left text-sm mt-2 pl-6">
+              <input
+                type="checkbox"
+                onClick={() => setType('text')}
+                className="w-15 mr-1 relative top-[2px]"
+              />
+              <span className="text-[#c3c3c3]"> Show Password </span>
+            </p>
             <br />
             <button className=" w-32 h-12 text-base text-white mt-4 round bg-[#232323]">
               Sign in
