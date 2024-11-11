@@ -9,11 +9,11 @@ function ImageinfoImg() {
 
       <Link
         to="/blogs"
-        className=" px-6 py-3 relative text-base top-12 
+        className=" px-6 py-3 relative text-base top-10 
          
-      rounded border-[1px] border-white"
+      rounded-full border-[1px] border-[#797979]"
       >
-        Read my blogs
+        Yazılarımı oxu{" "}
         <Arrrow style="-rotate-45 ml-2 text-base text-white font-medium" />
       </Link>
     </div>

@@ -26,7 +26,7 @@ function Blogs() {
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(getBlogs({ setData, category }));
-  }, [category]);
+  }, [category, dispatch]);
 
   const [query, setQuery] = useState<string>("");
 

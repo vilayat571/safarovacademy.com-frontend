@@ -8,7 +8,7 @@ import Layout from "../../layout/layout";
 import React from "react";
 import SEO from "../../SEO/SEO";
 
-const App: React.FC<{}> = () => {
+const App = () => {
   return (
     <React.Fragment>
       <SEO

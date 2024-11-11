@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -12,24 +12,10 @@ export default function Navbar() {
     setSideOpen(!sideOpen);
   }
 
-  const data: any = localStorage.getItem("signIn");
-  const object = JSON.parse(data);
+  const data: string | null= localStorage.getItem("signIn");
+  const object = JSON.parse(data || '');
 
-  const showAlert = () => {
-    !object?.username && alert("Create an account so you can ask me questions");
-  };
 
-  const navigate = useNavigate();
-
-  const path = useLocation();
-  
-  const onRefresh = () => {
-    if ((path.pathname = "/")) {
-      navigate("/");
-    } else {
-      return null;
-    }
-  };
 
   return (
     <div>
@@ -38,26 +24,22 @@ export default function Navbar() {
           className="xl:w-[85%] lg:w-[85%] md:w-[85%] sm:w-[91%] rounded-full bg-[#1F2025]
          xl:mx-8 lg:mx-8 md:mx-8 sm:mx-0 mt-8 xl:px-16 lg:px-14 md:px-12 sm:px-8 py-4 flex justify-between items-center"
         >
-          <Logo  font="text-[27px]" />
+          <Logo font="text-[27px]" />
 
           <div
             className="flex xl:block lg:block md:hidden sm:hidden text-normal
            tracking-wide text-[#C3C3C3] justify-between "
           >
             <Link className="mx-4 mb-2" to="/blogs">
-              Blogs
+              Bloqlar
             </Link>
-            <Link
-              onClick={showAlert}
-              className={`mx-4 ${
-                object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
-              }`}
-              to={`${object?.username ? "/askquestion/myquestions" : "/"}`}
-            >
-              Ask a question
-            </Link>
+
             <Link className="mx-4 mb-2" to="/">
-              Who I'am
+              Vilayət kimdir?
+            </Link>
+
+            <Link className="mx-4 mb-2" to="/">
+              CV & Təcrübə
             </Link>
           </div>
 
@@ -66,8 +48,6 @@ export default function Navbar() {
               "xl:block lg:block md:hidden sm:hidden text-normal leading-9 tracking-wide"
             }
             arrowStyle={"-rotate-45 mr-2 text-normal text-white font-medium"}
-            textLink={object == null ? "Let's join me" : object?.username}
-            pathLink={object == null ? "/signin" : "/askquestion/myquestions"}
           />
 
           <div className=" xl:hidden lg:hidden md:block sm:block">
@@ -79,11 +59,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-
-
-
-
 
       <div
         className={`*: ${
@@ -116,7 +91,6 @@ export default function Navbar() {
               Blogs
             </Link>
             <Link
-              onClick={showAlert}
               className={`mx-4 mb-2 ${
                 object?.username ? "text-[#C3C3C3]" : "text-[#888888] 	"
               }`}
@@ -124,7 +98,7 @@ export default function Navbar() {
             >
               Ask a question
             </Link>
-            <Link className="mx-4 mb-2" onClick={onRefresh} to="/">
+            <Link className="mx-4 mb-2"  to="/">
               Who I'am
             </Link>
 
@@ -133,15 +107,10 @@ export default function Navbar() {
                 "xl:hidden lg:hidden md:block sm:block mx-4  text-normal leading-9 tracking-wide"
               }
               arrowStyle={"-rotate-45 mr-1 text-normal text-white font-medium"}
-              textLink={object == null ? "Let's join me" : object?.username}
-              pathLink={object == null ? "/signin" : "/askquestion/myquestions"}
             />
           </div>
         </div>
       </div>
-
-
-
     </div>
   );
 }

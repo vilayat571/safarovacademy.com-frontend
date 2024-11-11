@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import SEO from "../../SEO/SEO";
 
 function Notfound() {
-  const { pathname }: any = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <>

@@ -24,7 +24,7 @@ function Singleblog() {
   const { blogName } = useParams();
 
   useEffect(() => {
-    fetch(`https://api.safarovacademy.com//api/v1/blog/${blogName}/`)
+    fetch(`https://api.safarovacademy.com/api/v1/blog/${blogName}/`)
       .then((response) => response.json())
       .then((data) => setBlog(data));
   }, [blogName]);
