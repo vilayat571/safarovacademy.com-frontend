@@ -13,7 +13,7 @@ export default function Navbar() {
   }
 
   const data: string | null= localStorage.getItem("signIn");
-  const object = JSON.parse(data || '');
+  const object = data!=null && JSON.parse(data );
 
 
 
